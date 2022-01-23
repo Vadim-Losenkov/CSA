@@ -1,11 +1,14 @@
 .container {
-  max-width: 1200px;
+  max-width: 1130px;
+  width: 100%;
   padding: 0 15px;
   margin: 0 auto;
 }
 
 a {
   display: inline-block;
+  color: inherit;
+  font-size: 14px;
 }
 
 button {
@@ -19,9 +22,15 @@ button {
 
 body {
   // min-width: 320px;
-  min-width: 1920px;
+  // min-width: 1920px;
   overflow-x: hidden;
   min-height: 100vh;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px !important;
+  line-height: 177%;
+  color: #484848;
+  background: linear-gradient(180deg, #FFFFFF 6.42%, #D0EFFF 17.33%, #FFFFFF 48.37%, #FFFFFF 94.62%);
 }
 
 .wrapper {
@@ -36,4 +45,20 @@ body {
 
 .footer {
   flex: 0 0 auto;
+}
+
+.title {
+  font-family: Graphik;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 62px;
+  text-align: center;
+}
+
+.review-text {
+  font-family: Inter;
+  font-size: 12px;
+  line-height: 177%;
+  color: #484848;
 }

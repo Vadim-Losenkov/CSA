@@ -4,14 +4,151 @@
 @import "global";
 @import "libs";
 
+.header {
+  padding: 35px 0;
+  padding-bottom: 18px;
 
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
+  &__logo {
+    max-width: 300px;
+    width: 100%;
 
+    img {
+      width: 100%;
+    }
+  }
+  &__menu {
+    max-width: 100%;
+    width: 100%;
+    margin-left: 55px;
+  }
+  &__menu-list {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 33px;
+  }
+  &__menu-link {
+    color: #161621;
+  }
 
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+  &__user-signIn {
+    color: rgba(22, 22, 33, 0.24);
+    margin-right: 30px;
+  }
 
+  &__user-signUp {
+    background: linear-gradient(258.55deg, rgba(1, 173, 234, 0.14) 5.51%, rgba(3, 119, 251, 0.14) 97.64%);
+    border-radius: 8px;
+    padding: 19px 23px;
+    padding-left: 53px;
+    position: relative;
+    color: #0294f2;
 
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-60%);
+      width: 20px;
+      height: 20px;
+      left: 23px;
+      background-image: url("../images/icons/user-add.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
 
+.top {
+  margin-bottom: 54px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__info {
+    max-width: 375px;
+  }
+  &__info-title {
+    font-family: Graphik;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 53px;
+    line-height: 117%;
+    margin-bottom: 19px;
 
+    span {
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      background-image: linear-gradient(178.36deg, #161621 1.39%, rgba(22, 22, 33, 0) 108.02%);
+    }
+  }
+  &__info-text {
+    margin-bottom: 32px;
+  }
+  &__info-links {
+    display: flex;
+    align-items: center;
+    column-gap: 24px
+  }
+  &__info-link {
+    padding: 19px 25px;
+    padding-left: 55px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 8px;
+    position: relative;
+    &.blue {
+      background: linear-gradient(244.26deg, #01B5E8 -7.92%, #0377FB 95.1%);
+      background-position: 0 0;
+      
+      &::before {
+        background-image: url('../images/icons/dashboad.svg');
+        width: 17px;
+        height: 17px;
+      }
+    }
+    &.black {
+      background: #000;
+      &::before {
+        background-image: url('../images/icons/vk.svg');
+        width: 16px;
+        height: 10px;
+      }
+    }
 
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-60%);
+      left: 25px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+.product {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
 
 @import "media";
