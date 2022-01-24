@@ -149,6 +149,92 @@
     justify-content: space-between;
     align-items: flex-start;
   }
+  
+  &__item {
+    max-width: 540px;
+    border-radius: 20px;
+  }
+  &__item-info {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.32) 18.76%, rgba(255, 255, 255, 0.16) 75.48%);
+    backdrop-filter: blur(29px);
+    padding: 20px 48px;
+    padding-bottom: 50px;
+    border-radius: 0 0 20px 20px;
+  }
+  &__item-head {
+    background-color: #fff;
+    padding: 35px 48px;
+    border-radius: 20px 20px 0 0;
+  }
+  
+  &__item-title {
+    font-size: 27px;
+    line-height: 270%;
+    font-weight: 600;
+    font-family: Graphik;
+    margin-bottom: 5px;
+  }
+  &__item-benefit {
+    padding: 9px 27px;
+    padding-left: 64px;
+    border-radius: 24px;
+    font-weight: 500;
+    line-height: 240%;
+    position: relative;
+    
+    &.pink {
+      background: #FF469F14;
+      color: #F243A3;
+      
+    }
+    
+    &.orange {
+      background: #FF894621;
+      color: #F243A3;
+      
+    }
+    &.green {
+      background: #16CF341A;
+      color: #1CBD34;
+      
+    }
+    &.purple {
+      background: #FF469F14;
+      color: #F243A3;
+      &::before {
+        background-image: url('../images/icons/pink-benefit.svg');
+      }
+    }
+    &.blue {
+      background: #FF469F14;
+      color: #F243A3;
+      &::before {
+        background-image: url('../images/icons/pink-benefit.svg');
+      }
+    }
+    &.red {
+      background: #FF469F14;
+      color: #F243A3;
+      &::before {
+        background-image: url('../images/icons/pink-benefit.svg');
+      }
+    }
+    
+    
+    &::before {
+      content: "";
+      width: 12px;
+      height: 16px;
+      position: absolute;
+      top: 50%;
+      transform: translateX(-50%);
+      left: 27px;
+      background-image: url('../images/icons/pink-benefit.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
 }
 
 @import "media";
