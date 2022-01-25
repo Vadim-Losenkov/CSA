@@ -1,6 +1,7 @@
 @media (max-width: 1000px) {
   .header {
     &__menu--mobile {
+      cursor: pointer;
       display: block;
       background: $blue;
       width: 62px;
@@ -47,6 +48,137 @@
     &__menu,
     &__user {
       display: none;
+    }
+  }
+  .header__logo {
+    margin-right: 30px;
+  }
+  .header-mobile {
+    display: block;
+
+    background: #ffffff;
+    box-shadow: 0px 60px 86px rgba(0, 0, 0, 0.07);
+    backdrop-filter: blur(30px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 18px;
+    width: 277px;
+    box-shadow: 2px 2px 20px rgba(#000, 0.07);
+
+    position: absolute;
+    top: 120px;
+    z-index: 1000;
+    right: 20px;
+    padding-top: 30px;
+    padding-bottom: 25px;
+
+    transform: translateY(-1000px);
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    &.open {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    &__link {
+      width: 100%;
+      margin-bottom: 10px;
+      position: relative;
+      display: block;
+      min-height: 40px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      color: #292929;
+      line-height: 27px;
+      font-weight: 400;
+      &.active {
+        font-weight: 700;
+        border-right: 2px solid $blue;
+      }
+    }
+    &__user {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      border-top: 2px solid #eee;
+      padding-top: 10px;
+      margin-top: 27px;
+      .header__user-signIn {
+        margin: 0;
+        margin-bottom: 6px;
+      }
+    }
+  }
+
+  .top__image-coin {
+    &--btc {
+      width: 190px;
+      left: 20px;
+      top: 25px;
+    }
+    &--ltc {
+      width: 200px;
+      right: 10px;
+    }
+    &--eth {
+      left: 0;
+      width: 180px;
+    }
+    &--bnb {
+      right: 10px;
+      width: 170px;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .top__inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .top__info {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .top__info-links {
+    text-align: center;
+    justify-content: center;
+  }
+  .top__image {
+    max-width: 500px;
+    order: -1;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 400px) {
+  .header__menu--mobile {
+    width: 40px;
+    height: 37px;
+    padding: 9px 10px;
+
+    span {
+      width: 16px;
+      height: 1.5px;
+    }
+  }
+  .header__menu--mobile.open {
+    span:nth-child(2) {
+      transition: all 0.3s;
+      opacity: 0;
+    }
+    span:first-child {
+      transform: translateY(5.7px) rotate(-135deg);
+      transition: all 0.3s;
+    }
+    span:last-child {
+      transform: translateY(-5.7px) rotate(135deg);
+      transition: all 0.3s;
     }
   }
 }

@@ -83,6 +83,7 @@
   }
   &__info {
     max-width: 375px;
+    margin-right: 30px;
   }
   &__info-title {
     font-family: Graphik;
@@ -144,6 +145,51 @@
       background-position: center;
     }
   }
+
+  &__image {
+    padding-top: 50px;
+    position: relative;
+  }
+  &__image-coin {
+    position: absolute;
+
+    &--btc {
+      top: 0px;
+      left: -30px;
+
+      animation-name: levitation;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+    &--bnb {
+      top: 70px;
+      right: -40px;
+
+      animation-name: levitation;
+      animation-duration: 4.5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+    &--ltc {
+      bottom: -40px;
+      right: -120px;
+
+      animation-name: levitation;
+      animation-duration: 4s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+    &--eth {
+      bottom: 40px;
+      left: -63px;
+
+      animation-name: levitation;
+      animation-duration: 6s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
 }
 
 .product {
@@ -153,6 +199,7 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 40px;
+    position: relative;
   }
 
   &__item {
@@ -203,7 +250,7 @@
     font-weight: 500;
     display: inline-block;
     border-radius: 24px;
-    
+
     &.pink {
       background: #ff469f14;
       color: #f243a3;
@@ -352,6 +399,9 @@
     }
   }
 }
+.header-mobile {
+  display: none;
+}
 
 .reviews {
   margin-top: 50px;
@@ -364,10 +414,10 @@
   &__text {
     text-align: center;
   }
-  
+
   &__item {
     padding: 28px;
-    background: #DBE6F030;
+    background: #dbe6f030;
     max-width: 350px;
     margin-bottom: 30px;
     width: auto;
@@ -386,7 +436,7 @@
     flex-wrap: wrap;
     column-gap: 30px;
   }
-  
+
   &__item-head {
     display: flex;
     align-items: center;
@@ -403,13 +453,13 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 177%;
-    color: #0379FA;
+    color: #0379fa;
   }
   &__item-time {
     font-weight: normal;
     font-size: 12px;
     line-height: 177%;
-    color: #B9BFC9;
+    color: #b9bfc9;
   }
   &__item-text {
     font-weight: normal;
@@ -459,6 +509,24 @@
   }
   &__menu-item {
     color: #fff;
+  }
+}
+
+@keyframes levitation {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
