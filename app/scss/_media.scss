@@ -1,0 +1,52 @@
+@media (max-width: 1000px) {
+  .header {
+    &__menu--mobile {
+      display: block;
+      background: $blue;
+      width: 62px;
+      height: 62px;
+      padding: 20px 20px;
+      box-shadow: 0px 27px 37px -8px rgba($blue, 0.25);
+      border-radius: 50%;
+      span {
+        background-color: #fff;
+        width: 23px;
+        height: 2px;
+        border-radius: 0px;
+        display: block;
+        margin: 4px 0;
+        transition: all 0.3s;
+      }
+      span:nth-child(2) {
+        transition: all 0.3s;
+        opacity: 1;
+      }
+      span:first-child {
+        transform: translateY(0px) rotate(0deg);
+        transition: all 0.3s;
+      }
+      span:last-child {
+        transform: translateY(0px) rotate(0deg);
+        transition: all 0.3s;
+      }
+    }
+    &__menu--mobile.open {
+      span:nth-child(2) {
+        transition: all 0.3s;
+        opacity: 0;
+      }
+      span:first-child {
+        transform: translateY(6px) rotate(-135deg);
+        transition: all 0.3s;
+      }
+      span:last-child {
+        transform: translateY(-6px) rotate(135deg);
+        transition: all 0.3s;
+      }
+    }
+    &__menu,
+    &__user {
+      display: none;
+    }
+  }
+}

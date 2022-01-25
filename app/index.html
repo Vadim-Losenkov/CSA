@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1920px"> <!-- device-width, initial-scale=1.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- device-width, initial-scale=1.0 -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>CSA</title>
   <link rel="stylesheet" href="css/style.min.css" type="text/css" media="all" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700;900&display=swap" rel="stylesheet">
-  <script src="//cdn.jsdelivr.net/npm/eruda"></script> <script>eruda.init();</script>
-  
+  <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+  <script>
+    eruda.init();
+  </script>
+
 </head>
 <body>
   <header class="header">
@@ -33,7 +36,7 @@
             </li>
             <li class="header__menu-item">
               <a href="#" class="header__menu-link">
-                Отзывы 
+                Отзывы
               </a>
             </li>
             <li class="header__menu-item">
@@ -51,10 +54,29 @@
             Регистрация
           </a>
         </div>
+        <div class="header__menu--mobile">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
   </header>
-  <main class="main">
+  <div class="header-mobile">
+    <a href="#" class="header-mobile__link">
+      Главная
+    </a>
+    <a href="#" class="header-mobile__link">
+      Услуги
+    </a>
+    <a href="#" class="header-mobile__link">
+      Главная
+    </a>
+    <a href="#" class="header-mobile__link">
+      Главная
+    </a>
+  </div>
+  <!-- <main class="main">
     <section class="top">
       <div class="container">
         <div class="top__inner">
@@ -86,7 +108,7 @@
     <section class="product">
       <div class="container">
         <div class="product__inner">
-          
+
           <div class="product__item">
             <div class="product__item-head">
               <img class="item-head" src="images/global/item-head-1.svg" alt="">
@@ -146,11 +168,11 @@
           <div class="product__item">
             <div class="product__item-head">
               <img class="item-head" src="images/global/item-head-2.svg" alt="">
-              <div class="prouct__item-eco">
-                
+              <div class="product__item-eco orange">
+                Экономия 18%
               </div>
               <h2 class="product__item-title">
-                Crypto Sharks Academy + 
+                Crypto Sharks Academy +
               </h2>
               <p class="product__item-text">
                 Доступ в закрытый Discord-канал академии, который включает в себя:
@@ -210,11 +232,197 @@
         </div>
       </div>
     </section>
-  </main>
-  <footer class="footer">
-    
-  </footer>
-  
+    <section class="reviews">
+      <div class="container">
+        <div class="reviews__inner">
+          <div class="reviews__head">
+            <h2 class="reviews__title title">
+              Наши отзывы
+              <div class="title-text orange">
+                Текстовое место
+              </div>
+            </h2>
+            <p class="reviews__text">
+              Созданное с целью помочь людям понять, освоить и разобраться в криптовалюте.
+            </p>
+          </div>
+          <div class="reviews__box">
+            <div class="reviews__item short">
+              <div class="reviews__item-head">
+                <div class="reviews__item-avatar">
+                  <img src="images/content/reviews-user-avatar-1.jpg" alt="user-avatar">
+                </div>
+                <div class="reviews__item-info">
+                  <div class="reviews__item-name">
+                    Олег Павлов
+                  </div>
+                  <div class="reviews__item-time">
+                    Вчера в 15:00
+                  </div>
+                </div>
+              </div>
+              <p class="reviews__item-text">
+                С другой стороны реализация
+                намеченного плана развития требует от нас
+                системного анализа всесторонне.
+              </p>
+            </div>
+            <div class="reviews__item medium">
+              <div class="reviews__item-head">
+                <div class="reviews__item-avatar">
+                  <img src="images/content/reviews-user-avatar-1.jpg" alt="user-avatar">
+                </div>
+                <div class="reviews__item-info">
+                  <div class="reviews__item-name">
+                    Олег Павлов
+                  </div>
+                  <div class="reviews__item-time">
+                    Вчера в 15:00
+                  </div>
+                </div>
+              </div>
+              <p class="reviews__item-text">
+                С другой стороны реализация
+                намеченного плана развития требует от нас
+                системного анализа всесторонне.
+              </p>
+            </div>
+            <div class="reviews__item long">
+              <div class="reviews__item-head">
+                <div class="reviews__item-avatar">
+                  <img src="images/content/reviews-user-avatar-1.jpg" alt="user-avatar">
+                </div>
+                <div class="reviews__item-info">
+                  <div class="reviews__item-name">
+                    Олег Павлов
+                  </div>
+                  <div class="reviews__item-time">
+                    Вчера в 15:00
+                  </div>
+                </div>
+              </div>
+              <p class="reviews__item-text">
+                С другой стороны реализация
+                намеченного плана развития требует от нас
+                системного анализа всесторонне.
+              </p>
+            </div>
+            <div class="reviews__item medium">
+              <div class="reviews__item-head">
+                <div class="reviews__item-avatar">
+                  <img src="images/content/reviews-user-avatar-1.jpg" alt="user-avatar">
+                </div>
+                <div class="reviews__item-info">
+                  <div class="reviews__item-name">
+                    Олег Павлов
+                  </div>
+                  <div class="reviews__item-time">
+                    Вчера в 15:00
+                  </div>
+                </div>
+              </div>
+              <p class="reviews__item-text">
+                С другой стороны реализация
+                намеченного плана развития требует от нас
+                системного анализа всесторонне.
+              </p>
+            </div>
+            <div class="reviews__item long">
+              <div class="reviews__item-head">
+                <div class="reviews__item-avatar">
+                  <img src="images/content/reviews-user-avatar-1.jpg" alt="user-avatar">
+                </div>
+                <div class="reviews__item-info">
+                  <div class="reviews__item-name">
+                    Олег Павлов
+                  </div>
+                  <div class="reviews__item-time">
+                    Вчера в 15:00
+                  </div>
+                </div>
+              </div>
+              <p class="reviews__item-text">
+                С другой стороны реализация
+                намеченного плана развития требует от нас
+                системного анализа всесторонне.
+              </p>
+            </div>
+            <div class="reviews__item short">
+              <div class="reviews__item-head">
+                <div class="reviews__item-avatar">
+                  <img src="images/content/reviews-user-avatar-1.jpg" alt="user-avatar">
+                </div>
+                <div class="reviews__item-info">
+                  <div class="reviews__item-name">
+                    Олег Павлов
+                  </div>
+                  <div class="reviews__item-time">
+                    Вчера в 15:00
+                  </div>
+                </div>
+              </div>
+              <p class="reviews__item-text">
+                С другой стороны реализация
+                намеченного плана развития требует от нас
+                системного анализа всесторонне.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="dark-side">
+      <div class="roadmap">
+        <div class="container">
+          <div class="roadmap__inner">
+            <div class="roadmap__head">
+              <h2 class="roadmap__title title">
+                Roadmap
+              </h2>
+              <p class="roadmap__text">
+                Созданное с целью помочь людям понять, освоить и разобраться в криптовалюте.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__inner">
+            <div class="footer__logo">
+              <img src="images/global/logo-whiteText.svg" alt="">
+            </div>
+            <p class="footer__copy">
+              © 2022 All rights reserved
+            </p>
+            <ul class="footer__menu">
+              <li class="footer__menu-item">
+                <a href="#" class="footer__menu-link">
+                  Главная
+                </a>
+              </li>
+              <li class="footer__menu-item">
+                <a href="#" class="footer__menu-link">
+                  Пользовательское соглашение
+                </a>
+              </li>
+              <li class="footer__menu-item">
+                <a href="#" class="footer__menu-link">
+                  Услуги
+                </a>
+              </li>
+              <li class="footer__menu-item">
+                <a href="#" class="footer__menu-link">
+                  Отзывы
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main> -->
+
   <script src="js/jquery.min.js"></script>
   <script src="js/main.js"></script>
 </body>

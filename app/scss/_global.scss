@@ -22,10 +22,9 @@ button {
 
 body {
   // min-width: 320px;
-  // min-width: 1920px;
+  min-width: 1000px;
   overflow-x: hidden;
   min-height: 100vh;
-  min-height: 5000px;
   font-family: Inter;
   font-weight: 400;
   font-size: 14px !important;
@@ -35,17 +34,11 @@ body {
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
+  overflow-x: hidden;
 }
 
 .main {
-  flex: 1 0 auto;
-}
-
-.footer {
-  flex: 0 0 auto;
+  overflow-x: hidden;
 }
 
 .title {
@@ -55,6 +48,46 @@ body {
   font-size: 34px;
   line-height: 62px;
   text-align: center;
+  margin-bottom: 18px;
+  color: #161621;
+  
+  position: relative;
+  .title-text {
+    padding: 10px 18px;
+    position: absolute;
+    top: -10px;
+    right: -30px;
+    font-weight: 500;
+    display: inline-block !important;
+    border-radius: 24px;
+    font-size: 14px;
+    line-height: 170%;
+    
+    &.pink {
+      background: #ff469f14;
+      color: #f243a3;
+    }
+    &.orange {
+      background: #ff894621;
+      color: #ff7c44;
+    }
+    &.green {
+      background: #16cf341a;
+      color: #1cbd34;
+    }
+    &.purple {
+      background: #8c46ff14;
+      color: #5d43ff;
+    }
+    &.blue {
+      background: #46b1ff21;
+      color: #169dff;
+    }
+    &.red {
+      background: #ff2c2c1c;
+      color: #ff3d3d;
+    }
+  }
 }
 
 .review-text {
@@ -62,4 +95,15 @@ body {
   font-size: 12px;
   line-height: 177%;
   color: #484848;
+}
+
+.dark-side {
+  background-image: url('../images/global/index-footer.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left;
+  width: 102%;
+  margin: 0 -15px;
+  min-height: 500px;
+  padding: 105px 0;
 }
