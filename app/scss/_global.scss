@@ -22,7 +22,7 @@ button {
 
 body {
   // min-width: 320px;
-  min-width: 768px;
+  // min-width: 768px;
   overflow-x: hidden;
   min-height: 100vh;
   font-family: Inter;
@@ -31,6 +31,12 @@ body {
   line-height: 177%;
   color: #484848;
   background: linear-gradient(180deg, #FFFFFF 6.42%, #D0EFFF 17.33%, #FFFFFF 48.37%, #FFFFFF 94.62%);
+  &.dashboard-body.light {
+    background: linear-gradient(179.86deg, #FFFFFF 31.18%, #BFDDFF 101.58%);
+  }
+  &.dashboard-body.dark {
+    background: linear-gradient(195.98deg, #050415 2.35%, #060617 83.74%);
+  }
 }
 
 .wrapper {
@@ -101,9 +107,9 @@ body {
   background-image: url('../images/global/index-footer.svg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top left;
+  background-position: top center;
   width: 102%;
-  margin: 0 -15px;
+  margin: 0 -20px;
   min-height: 500px;
   padding: 105px 0;
 }
