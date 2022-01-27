@@ -616,12 +616,18 @@
   &__user-box {
     padding-left: 90px;
     display: flex;
+    position: relative;
   }
   &__user-avatar {
     position: absolute;
     top: 0;
+    bottom: 0;
     left: 20px;
-
+    .user-stroke {
+      height: 100%;
+      object-fit: cover;
+      object-position: center left;
+    }
     .user-avatar {
       position: absolute;
       left: -20px;
@@ -641,7 +647,6 @@
   }
   &__user-data {
     padding: 30px;
-    background: linear-gradient(180deg, rgba(201, 218, 226, 0.1682) -32.84%, rgba(201, 218, 226, 0.0957) 139.71%);
     border-radius: 0px 19px 19px 0;
   }
   &__user-dataMail,
@@ -682,8 +687,6 @@
     font-weight: bold;
     font-size: 16px;
     line-height: 177%;
-    /* or 28px */
-
     color: #161621;
   }
   &__plan {
@@ -759,12 +762,66 @@
   &__theme {
     width: 49px;
     height: 49px;
-    background: #050416;
+    background-color: #050416;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     cursor: pointer;
+  }
+}
+.dashboard-body.dark {
+  transition: .3s;
+  .dashboard__user-data {
+    background: linear-gradient(360deg, rgba(11, 10, 34, 0.89) -9.66%, rgba(11, 10, 34, 0.31) 139.84%);
+    backdrop-filter: blur(22px);
+  }
+  .dashboard__theme {
+    transition: .3s;
+    background-color: $blue;
+  }
+  .dashboard__theme--light,
+  .dashboard-bg--light,
+  .header__logo--light {
+    display: none;
+  }
+  .dashboard__theme--dark,
+  .dashboard-bg--dark,
+  .header__logo--dark {
+    display: block;
+  }
+  .dashboard__user-dataMail {
+    color: #fff;
+  }
+  .dashboard__user-pass {
+    color: #fff;
+  }
+  .dashboard__title {
+    color: #fff;
+    
+    span {
+      background-image: linear-gradient(178.36deg, #fff 1.39%, rgba(22, 22, 33, 0) 108.02%);
+    }
+  }
+}
+.dashboard-body.light {
+  transition: .3s;
+  .dashboard__theme {
+    transition: .3s;
+    background-color: #050416;
+  }
+  .dashboard__user-data {
+    background: linear-gradient(180deg, rgba(201, 218, 226, 0.1682) -32.84%, rgba(201, 218, 226, 0.0957) 139.71%);
+  }
+  .dashboard__theme--light,
+  .dashboard-bg--light,
+  .header__logo--light {
+    display: block;
+  }
+  .dashboard__theme--dark,
+  .dashboard-bg--dark,
+  .header__logo--dark {
+    display: none;
   }
 }
 

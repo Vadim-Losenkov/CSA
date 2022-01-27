@@ -1,1 +1,190 @@
 @import "libs/reset";
+@import "libs/magnific-popup";
+
+
+.mfp-zoom-in .mfp-with-anim {
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+          transform: scale(0.8); }
+ 
+.mfp-zoom-in.mfp-bg {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+ 
+.mfp-zoom-in.mfp-ready .mfp-with-anim {
+  opacity: 1;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1); }
+ 
+.mfp-zoom-in.mfp-ready.mfp-bg {
+  opacity: 0.8; }
+ 
+.mfp-zoom-in.mfp-removing .mfp-with-anim {
+  -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+          transform: scale(0.8);
+  opacity: 0; }
+ 
+.mfp-zoom-in.mfp-removing.mfp-bg {
+  opacity: 0; }
+  
+.mfp-zoom-in.mfp-bg {
+  background-color: rgba(0, 8, 12, 0.37);
+  backdrop-filter: blur(7px);
+}
+.mfp-zoom-in.mfp-removing.mfp-bg {
+  background-color: rgba(0, 8, 12, 0.37);
+  backdrop-filter: blur(7px);
+}
+.mfp-zoom-in.mfp-ready.mfp-bg {
+  background-color: rgba(0, 8, 12, 0.37);
+  backdrop-filter: blur(7px);
+}
+
+.user-popup {
+  .mfp-close {
+    display: none !important;
+  }
+  background-color: #fff;
+  border-radius: 21px;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  
+  &__head {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 46px 78px;
+    padding-bottom: 0;
+    position: relative;
+    background: linear-gradient(360deg, rgba(241, 241, 241, 0.63) -16.38%, rgba(241, 241, 241, 0) 60.26%);
+  }
+  &__head-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    .close-popup {
+      position: absolute;
+      right: 40px;
+      top: 55px;
+    }
+  }
+  &__head-toggler {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 25px;
+  }
+  &__head-togglerLink {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 62px;
+    padding: 0 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #C4C4C466;
+    color: #16162138;
+    
+    &.active {
+      color: #161621;
+      border-bottom: 2px solid $blue;
+    }
+  }
+  &__box {
+    background-color: #fff;
+    padding: 50px;
+    border-bottom-left-radius: 21px;
+    border-bottom-right-radius: 21px;
+  }
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+    align-items: center;
+  }
+  &__info-inputWrapper {
+    position: relative;
+    margin-bottom: 45px;
+    svg {
+      position: absolute;
+      top: 40%;
+      left: 15px;
+      transform: translateY(-50%);
+    }
+  }
+  &__info-input {
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    background-color: transparent;
+    border-radius: 0px;
+    // margin-bottom: 45px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 19px;
+    padding-left: 56px;
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 177%;
+    color: rgba(0, 0, 0, 1);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.29);
+    outline: none;
+    transition: .3s;
+    
+    &:focus {
+      transition: .3s;
+      border-bottom: 2px solid $blue;
+    }
+    &::placeholder {
+      font-family: Inter;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 177%;
+      color: rgba(0, 0, 0, 0.29);
+    }
+  }
+  
+  &__forgot {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #C9C9CB;
+  }
+  &__link {
+    padding: 19px;
+    padding-left: 53px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    background-color: $blue;
+    border-radius: 8px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 19px;
+      width: 17px;
+      height: 17px;
+      background-image: url('../images/icons/dashboad.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      
+    }
+  }
+}
