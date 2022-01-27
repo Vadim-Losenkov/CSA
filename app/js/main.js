@@ -39,6 +39,55 @@ $(function() {
       transition: '.3s'
     })
   })
+  $('[data-popup="form"]').validate({
+    errorClass: 'invalid-field',
+		rules: {
+			username: {
+				required: true,
+				minlength: 2
+			},
+			email: {
+				required: true,
+				email: true
+			},
+			phone: {
+				required: true,
+				minlength: 11,
+			},
+		},
+		messages: {
+			username: {
+				required: "Введите имя",
+				minlength: jQuery.validator.format("Имя должно состоять минимум из {0} символов")
+			},
+			phone: {
+				required: "Введите Телефон",
+				minlength: jQuery.validator.format("Телефон должен состоять минимум из {0} символов")
+			},
+			email: {
+				required: "Введите E-mail",
+				minlength: jQuery.validator.format("E-mail должен состоять минимум из {0} символов")
+			},
+		},
+		// the errorPlacement has to take the table layout into account
+		errorPlacement: function(error, element) {
+			if (element.is(":radio"))
+				error.appendTo(element.parent().next().next());
+			else if (element.is(":checkbox"))
+				error.appendTo(element.next());
+			else
+				error.appendTo(element.parent().next());
+		},
+		// specifying a submitHandler prevents the default submit, good for the demo
+		submitHandler: function(e) {
+			$('.success-popup').magnificPopup('open')
+		},
+		// set this class to error-labels to indicate valid fields
+		success: function(label) {
+			// set &nbsp; as text for IE
+			label.html("&nbsp;").addClass("checked")
+		}
+	});
   
   $('.dashboard__theme').on('click', themeToggler)
   function themeToggler(event) {
@@ -69,3 +118,4 @@ $(function() {
   }
 })
 
+new WOW().init();

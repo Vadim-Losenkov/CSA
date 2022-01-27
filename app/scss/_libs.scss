@@ -1,4 +1,5 @@
 @import "libs/reset";
+@import "libs/animate";
 @import "libs/magnific-popup";
 
 
@@ -59,9 +60,9 @@
   margin-top: 50px;
   
   &__head {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    // display: flex;
+    // align-items: center;
+    // flex-direction: column;
     padding: 46px 78px;
     padding-bottom: 0;
     position: relative;
@@ -75,13 +76,16 @@
       position: absolute;
       right: 40px;
       top: 55px;
+      cursor: pointer;
     }
   }
   &__head-toggler {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    column-gap: 25px;
+    // column-gap: 25px;
+    // margin: 0 -20px;
+    column-gap: 20px;
   }
   &__head-togglerLink {
     font-weight: 600;
@@ -108,6 +112,7 @@
     justify-content: space-between;
     column-gap: 30px;
     align-items: center;
+    flex-wrap: wrap;
   }
   &__info-inputWrapper {
     position: relative;
@@ -160,6 +165,7 @@
     font-size: 14px;
     line-height: 17px;
     color: #C9C9CB;
+    margin-bottom: 10px;
   }
   &__link {
     padding: 19px;

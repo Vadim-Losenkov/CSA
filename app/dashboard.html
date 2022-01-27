@@ -18,31 +18,31 @@
 </head>
 
 <body class="dashboard-body light">
-  <header class="header">
+  <header class="header wow fadeInDown" data-wow-duration="0.6s">
     <div class="container">
       <div class="header__inner">
-        <div class="header__logo">
+        <a href="index.html" class="header__logo">
           <img class="header__logo--light" src="images/global/logo-blackText.svg" alt="">
           <img class="header__logo--dark" src="images/global/logo-whiteText.svg" alt="">
-        </div>
+        </a>
       </div>
     </div>
   </header>
   <main class="main">
     <section class="dashboard">
-      <div class="dashboard-bg">
+      <div class="dashboard-bg wow fadeInDown">
         <img class="dashboard-bg--light" src="images/global/dashboard-bg-light.svg" alt="">
         <img class="dashboard-bg--dark" src="images/global/dashboard-bg-dark.svg" alt="">
       </div>
       <div class="container">
         <div class="dashboard__inner">
-          <h1 class="dashboard__title top__info-title">
+          <h1 class="dashboard__title top__info-title wow slideInLeft"  data-wow-duration="1s">
             Welcome to <br>
             <span>
               Dashboard
             </span>
           </h1>
-          <div class="dashboard__user">
+          <div class="dashboard__user wow slideInLeft" data-wow-duration="0.8s">
             <div class="dashboard__user-box">
               <div class="dashboard__user-avatar">
                 <img class="user-avatar" src="images/content/reviews-user-avatar-1.jpg" alt="">
@@ -68,7 +68,7 @@
             </div>
           </div>
           <div class="dashboard__plan">
-            <div class="dashboard__plan-item">
+            <div class="dashboard__plan-item wow slideInLeft" data-wow-duration="0.8s">
               <div class="dashboard__plan-icon">
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="36" height="36" rx="18" fill="#0377FB" fill-opacity="0.12" />
@@ -84,7 +84,7 @@
                 Дата истечения срока
               </p>
             </div>
-            <div class="dashboard__plan-item">
+            <div class="dashboard__plan-item wow slideInLeft" data-wow-duration="1s">
               <div class="dashboard__plan-icon">
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="36" height="36" rx="18" fill="#F7931A" fill-opacity="0.12" />
@@ -100,7 +100,7 @@
                 Дата истечения срока
               </p>
             </div>
-            <div class="dashboard__plan-item">
+            <div class="dashboard__plan-item wow slideInLeft" data-wow-duration="1.2s">
               <div class="dashboard__plan-icon">
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="36" height="36" rx="18" fill="#FF2983" fill-opacity="0.12" />
@@ -117,7 +117,7 @@
               </p>
             </div>
           </div>
-          <div class="dashboard__links">
+          <div class="dashboard__links wow fadeInLeft">
             <a href="#" class="dashboard__link blue">
               Перейти в дискорд
             </a>
@@ -135,6 +135,8 @@
   </main>
 
   <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/wow.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 

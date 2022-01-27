@@ -207,7 +207,6 @@
     margin-bottom: 40px;
     position: relative;
     column-gap: 20px;
-    flex-wrap: wrap;
   }
 
   &__item {
@@ -221,7 +220,7 @@
     // background-color: #000;
     // background: rgb(250, 250, 250);
     background: rgba($blue, 0.05);
-    margin-bottom: 150px;
+    margin-bottom: 40px;
 
     &:last-child {
       margin-bottom: 0;
@@ -552,6 +551,44 @@
     text-align: center;
     color: #fff;
   }
+
+  &__item {
+    background: linear-gradient(360deg, #0b0a22 -10.99%, rgba(11, 10, 34, 0) 139.84%);
+    backdrop-filter: blur(22px);
+    border-radius: 19px;
+    padding: 31px;
+    max-width: 385px;
+    margin-bottom: 10px;
+
+    &.short {
+      max-width: 250px;
+    }
+
+    &.active {
+      backdrop-filter: blur(0px);
+      background: #fff;
+      .roadmap__item-date {
+        color: #020113;
+      }
+      .roadmap__item-text {
+        color: #020113;
+      }
+    }
+  }
+  &__item-date {
+    font-family: Graphik;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 62px;
+    color: #fff;
+    // color: #020113;
+  }
+  &__item-text {
+    font-size: 12px;
+    line-height: 177%;
+    color: #fff;
+    // color: #020113;
+  }
 }
 
 .footer {
@@ -771,13 +808,13 @@
   }
 }
 .dashboard-body.dark {
-  transition: .3s;
+  transition: 0.3s;
   .dashboard__user-data {
     background: linear-gradient(360deg, rgba(11, 10, 34, 0.89) -9.66%, rgba(11, 10, 34, 0.31) 139.84%);
     backdrop-filter: blur(22px);
   }
   .dashboard__theme {
-    transition: .3s;
+    transition: 0.3s;
     background-color: $blue;
   }
   .dashboard__theme--light,
@@ -798,16 +835,16 @@
   }
   .dashboard__title {
     color: #fff;
-    
+
     span {
       background-image: linear-gradient(178.36deg, #fff 1.39%, rgba(22, 22, 33, 0) 108.02%);
     }
   }
 }
 .dashboard-body.light {
-  transition: .3s;
+  transition: 0.3s;
   .dashboard__theme {
-    transition: .3s;
+    transition: 0.3s;
     background-color: #050416;
   }
   .dashboard__user-data {
