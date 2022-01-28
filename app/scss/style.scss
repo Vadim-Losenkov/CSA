@@ -109,14 +109,14 @@
     column-gap: 24px;
   }
   &__info-link {
-    padding: 19px 25px;
+    padding: 17px 25px;
     padding-left: 55px;
     font-weight: 600;
     color: #fff;
     border-radius: 8px;
     position: relative;
     &.blue {
-      background: linear-gradient(244.26deg, #01b5e8 -7.92%, #0377fb 95.1%);
+      background: linear-gradient(244deg, #01B5E8 -7.92%, #0377FB 95.1%);
       background-position: 0 0;
 
       &::before {
@@ -127,6 +127,11 @@
     }
     &.black {
       background: #000;
+      transition: .3s;
+      &:hover {
+        transition: .3s;
+        background: rgb(36, 36, 36);
+      }
       &::before {
         background-image: url("../images/icons/vk.svg");
         width: 16px;
@@ -214,7 +219,7 @@
     width: 100%;
     border-radius: 20px;
     margin: 0 auto;
-    box-shadow: 2px 2px 20px 3px rgba(22, 22, 33, 0.05);
+    // box-shadow: 2px 2px 20px 3px rgba(22, 22, 33, 0.05);
     border-right: 3px solid #a4c8db24;
     // background-color: #fff;
     // background-color: #000;
@@ -470,25 +475,19 @@
   &__text {
     text-align: center;
   }
-  &__title {
-  }
+
   &__item {
     padding: 28px;
-    // margin: 0 15px;
+    border-radius: 10px;
     background: #dbe6f030;
-    // max-width: 350px;
-    // margin-bottom: 30px;
     min-width: 250px;
     width: 100%;
-    /* &.short {
-      max-width: 250px;
+    transition: .3s;
+
+    &:hover {
+      transform: translateY(-7px);
+      box-shadow: 3px 3px 10px rgba($color: #000000, $alpha: 0.06);
     }
-    &.medium {
-      max-width: 350px;
-    }
-    &.long {
-      max-width: 440px;
-    } */
   }
 
   &__box.line-1 {
@@ -627,6 +626,18 @@
     position: relative;
     z-index: 10;
   }
+  &__box {
+    display: flex;
+    flex-direction: column;
+  }
+  &__user {
+    max-width: auto;
+    width: auto;
+  }
+  &__plan {
+    max-width: auto;
+    width: auto;
+  }
   &-bg {
     position: absolute;
     bottom: 0;
@@ -730,11 +741,14 @@
     display: flex;
     column-gap: 22px;
     margin-bottom: 27px;
+    max-width: 620px;
+    justify-content: space-between;
   }
   &__plan-item {
     padding: 21px;
     background-color: #fff;
     border-radius: 9px;
+    min-width: 192px;
   }
   &__plan-date {
     margin-top: 16px;

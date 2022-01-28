@@ -101,7 +101,7 @@
               Созданное с целью помочь людям понять, освоить и разобраться в криптовалюте.
             </p>
             <div class="top__info-links">
-              <a href="dashboard.html" class="top__info-link blue">
+              <a href="dashboard.html" data-animate="button" class="top__info-link blue">
                 Dashboard
               </a>
               <a href="https://vk.com" class="top__info-link black">
@@ -187,7 +187,7 @@
                     подписка на 30 дней <sup>*</sup>
                   </p>
                 </div>
-                <a href="#" class="product__item-link">
+                <a href="#" data-animate="button" class="product__item-link">
                   Купить
                 </a>
               </div>
@@ -248,7 +248,7 @@
                     подписка на 90 дней <sup>*</sup>
                   </p>
                 </div>
-                <a href="#" class="product__item-link">
+                <a href="#" data-animate="button" class="product__item-link">
                   Купить
                 </a>
               </div>
@@ -256,7 +256,7 @@
           </div>
         </div>
         <div class="product__button wow fadeInDown">
-          <a href="#" class="product__button-link">
+          <a href="#" data-animate="button" class="product__button-link">
             Цена со скидкой 50% в честь открытия
           </a>
         </div>
@@ -508,19 +508,44 @@
       </div>
 
       <form action="" class="user-popup__box" autocomplete="off" data-popup="form">
-        <div class="call-popup__formInput">
-          <div class="call-popup__formItem field">
-            <input class="call-popup__input" placeholder="Имя" id="username" name="username" type="text" value="" maxlength="50" />
+        <div class="user-popup__info-inputBox">
+          <div class="user-popup__info-inputWrapper">
+            <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.4 13H1.6C0.716344 13 0 12.2725 0 11.375V1.55431C0.0372867 0.684571 0.742826 -0.000822555 1.6 7.40928e-07H14.4C15.2837 7.40928e-07 16 0.727539 16 1.625V11.375C16 12.2725 15.2837 13 14.4 13ZM1.6 3.14275V11.375H14.4V3.14275L8 7.475L1.6 3.14275ZM2.24 1.625L8 5.525L13.76 1.625H2.24Z" fill="#ccc"/>
+            </svg>
+
+            <input type="email" id="email" name="email" placeholder="Введите свой E-mail" class="user-popup__info-input">
           </div>
-          <div class="call-popup__input status"></div>
+          <div class="user-popup__info-status status"></div>
         </div>
-        <button type="submit" data-popup="reqest" class="call-popup__button default-button-green">
-          Заказать звонок
-        </button>
+        <div class="user-popup__info-inputBox">
+          <div class="user-popup__info-inputWrapper">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M6.09375 5.15625C6.09375 3.08518 7.77268 1.40625 9.84375 1.40625C11.9148 1.40625 13.5938 3.08518 13.5938 5.15625C13.5938 7.22732 11.9148 8.90625 9.84375 8.90625C9.42684 8.90625 9.02726 8.8385 8.65447 8.71395C8.40172 8.62949 8.12292 8.69521 7.93448 8.88365L6.97438 9.84375H5.85938C5.47105 9.84375 5.15625 10.1586 5.15625 10.5469V11.6618L5.09938 11.7188H3.98438C3.59605 11.7188 3.28125 12.0336 3.28125 12.4219V13.5368L3.22438 13.5938H1.64062C1.51118 13.5938 1.40625 13.4888 1.40625 13.3594V11.7757L6.11635 7.06552C6.30479 6.87708 6.37051 6.59829 6.28606 6.34552C6.1615 5.97274 6.09375 5.57312 6.09375 5.15625ZM9.84375 0C6.99603 0 4.6875 2.30853 4.6875 5.15625C4.6875 5.5713 4.73668 5.97563 4.82975 6.36338L0.205941 10.9872C0.074079 11.119 0 11.2979 0 11.4844V13.3594C0 14.2655 0.734533 15 1.64062 15H3.51562C3.7021 15 3.88095 14.9259 4.01281 14.794L4.48156 14.3253C4.61342 14.1935 4.6875 14.0146 4.6875 13.8281V13.125H5.39062C5.5771 13.125 5.75595 13.0509 5.88781 12.919L6.35656 12.4503C6.48842 12.3185 6.5625 12.1396 6.5625 11.9531V11.25H7.26562C7.4521 11.25 7.63095 11.1759 7.76281 11.044L8.63662 10.1703C9.02437 10.2633 9.42872 10.3125 9.84375 10.3125C12.6915 10.3125 15 8.00397 15 5.15625C15 2.30853 12.6915 0 9.84375 0ZM10.3125 5.625C10.8303 5.625 11.25 5.20526 11.25 4.6875C11.25 4.16974 10.8303 3.75 10.3125 3.75C9.79472 3.75 9.375 4.16974 9.375 4.6875C9.375 5.20526 9.79472 5.625 10.3125 5.625Z" fill="#ccc"/>
+            </svg>
+
+            <input type="password" id="password" name="password" placeholder="Введите свой пароль" class="user-popup__info-input">
+          </div>
+          <div class="user-popup__info-status status"></div>
+        </div>
+        <div class="user-popup__info-inputBox">
+          <div class="user-popup__info-inputWrapper">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M6.09375 5.15625C6.09375 3.08518 7.77268 1.40625 9.84375 1.40625C11.9148 1.40625 13.5938 3.08518 13.5938 5.15625C13.5938 7.22732 11.9148 8.90625 9.84375 8.90625C9.42684 8.90625 9.02726 8.8385 8.65447 8.71395C8.40172 8.62949 8.12292 8.69521 7.93448 8.88365L6.97438 9.84375H5.85938C5.47105 9.84375 5.15625 10.1586 5.15625 10.5469V11.6618L5.09938 11.7188H3.98438C3.59605 11.7188 3.28125 12.0336 3.28125 12.4219V13.5368L3.22438 13.5938H1.64062C1.51118 13.5938 1.40625 13.4888 1.40625 13.3594V11.7757L6.11635 7.06552C6.30479 6.87708 6.37051 6.59829 6.28606 6.34552C6.1615 5.97274 6.09375 5.57312 6.09375 5.15625ZM9.84375 0C6.99603 0 4.6875 2.30853 4.6875 5.15625C4.6875 5.5713 4.73668 5.97563 4.82975 6.36338L0.205941 10.9872C0.074079 11.119 0 11.2979 0 11.4844V13.3594C0 14.2655 0.734533 15 1.64062 15H3.51562C3.7021 15 3.88095 14.9259 4.01281 14.794L4.48156 14.3253C4.61342 14.1935 4.6875 14.0146 4.6875 13.8281V13.125H5.39062C5.5771 13.125 5.75595 13.0509 5.88781 12.919L6.35656 12.4503C6.48842 12.3185 6.5625 12.1396 6.5625 11.9531V11.25H7.26562C7.4521 11.25 7.63095 11.1759 7.76281 11.044L8.63662 10.1703C9.02437 10.2633 9.42872 10.3125 9.84375 10.3125C12.6915 10.3125 15 8.00397 15 5.15625C15 2.30853 12.6915 0 9.84375 0ZM10.3125 5.625C10.8303 5.625 11.25 5.20526 11.25 4.6875C11.25 4.16974 10.8303 3.75 10.3125 3.75C9.79472 3.75 9.375 4.16974 9.375 4.6875C9.375 5.20526 9.79472 5.625 10.3125 5.625Z" fill="#ccc"/>
+            </svg>
+            
+            <input type="password" id="password" name="password" placeholder="Введите свой пароль повторно" class="user-popup__info-input">
+          </div>
+          <div class="user-popup__info-status status"></div>
+        </div>
+        <div class="user-popup__links">
+          <a href="#" class="user-popup__forgot">Забыли пароль?</a>
+          <button type="submit" class="user-popup__link">Зарегестрироваться</button>
+        </div>
       </form>
 
 
-      <div class="user-popup__box">
+      <!-- <div class="user-popup__box">
         <div class="user-popup__info">
           <div class="user-popup__info-inputWrapper">
             <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -548,7 +573,7 @@
           <a href="#" class="user-popup__forgot">Забыли пароль?</a>
           <a href="#" class="user-popup__link">Зарегестрироваться</a>
         </div>
-      </div>
+      </div> -->
     </div>
     <div id="popup-signIn" class="user-popup mfp-with-anim mfp-hide">
       <div class="user-popup__head">

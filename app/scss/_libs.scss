@@ -114,9 +114,23 @@
     align-items: center;
     flex-wrap: wrap;
   }
+  &__info-status .input-error {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+  }
+  &__info-status .input-error-icon {
+    position: absolute;
+    top: 20%;
+    right: 0;
+  }
+  &__info-inputBox {
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+  }
   &__info-inputWrapper {
     position: relative;
-    margin-bottom: 45px;
     svg {
       position: absolute;
       top: 40%;
