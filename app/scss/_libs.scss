@@ -95,10 +95,16 @@
     padding-bottom: 15px;
     border-bottom: 2px solid #C4C4C466;
     color: #16162138;
+    transition: all .3s;
     
     &.active {
       color: #161621;
       border-bottom: 2px solid $blue;
+    }
+    &:not(.active):hover {
+      color: #161621;
+      border-bottom: 2px solid $blue;
+      opacity: .4;
     }
   }
   &__box {
@@ -118,10 +124,12 @@
     position: absolute;
     bottom: -8px;
     left: 0;
+    font-size: 12px;
+    font-weight: 400;
   }
   &__info-status .input-error-icon {
     position: absolute;
-    top: 20%;
+    top: 25%;
     right: 0;
   }
   &__info-inputBox {

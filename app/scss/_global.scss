@@ -4,6 +4,12 @@
   padding: 0 15px;
   margin: 0 auto;
 }
+.dashboard-container {
+  max-width: 1700px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
 
 a {
   display: inline-block;
@@ -48,7 +54,7 @@ body {
 }
 
 .title {
-  font-family: 'Graphik';
+  font-family: 'Graphik', Inter;
   font-style: normal;
   font-weight: 600;
   font-size: 34px;
@@ -111,4 +117,61 @@ body {
   margin: 0 -20px;
   min-height: 500px;
   padding: 105px 0;
+}
+
+
+[data-animate="button"] {
+  position: relative;
+  overflow: hidden;
+}
+[data-animate="button"] .circles {
+  opacity: 0;
+  transition: all .5s;
+  
+  .circle {
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background-color: #fff;
+    
+    animation-name: buttonAnimation;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  .circle--4 {
+    animation-delay: 1s;
+    /* bottom: -40%;
+    width: 40px;
+    height: 40px;
+    opacity: .12; */
+  }
+  .circle--1 {
+    animation-delay: -1s;
+    /* bottom: -40%;
+    width: 40px;
+    height: 40px;
+    opacity: .12; */
+  }
+  .circle--2 {
+    animation-delay: -3s;
+    /* width: 70px;
+    height: 70px;
+    opacity: .08;
+    bottom: -60%; */
+  }
+  .circle--3 {
+    animation-delay: -5s;
+    /* width: 100px;
+    height: 100px;
+    opacity: .05;
+    bottom: -80%; */
+  }
+}
+[data-animate="button"]:hover {
+  .circles {
+    opacity: 1;
+  }
 }

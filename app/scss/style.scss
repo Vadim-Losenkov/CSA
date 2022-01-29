@@ -1,6 +1,7 @@
 @import "fonts";
 @import "vars";
 @import "mixins";
+@import "animations";
 @import "global";
 @import "libs";
 
@@ -38,6 +39,11 @@
   }
   &__menu-link {
     color: #161621;
+    transition: .5s;
+    &:hover {
+      transition: .5s;
+      color: $blue;
+    }
   }
 
   &__user {
@@ -48,28 +54,42 @@
   &__user-signIn {
     color: rgba(22, 22, 33, 0.24);
     margin-right: 30px;
+    transition: all .5s;
+    position: relative;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba(22, 22, 33, 0);
+    
+    &:hover {
+      transition: all .5s;
+      color: rgba(22, 22, 33, 0.4);
+    }
   }
 
   &__user-signUp {
-    background: linear-gradient(258.55deg, rgba(1, 173, 234, 0.14) 5.51%, rgba(3, 119, 251, 0.14) 97.64%);
+    background-color: rgba(1, 173, 234, 0.14);
     border-radius: 8px;
     padding: 19px 23px;
     padding-left: 53px;
     position: relative;
     color: #0294f2;
+    transition: all .3s;
 
-    &::before {
-      content: "";
+    svg {
       position: absolute;
       top: 50%;
       transform: translateY(-60%);
       width: 20px;
       height: 20px;
       left: 23px;
-      background-image: url("../images/icons/user-add.svg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
+      transition: all .3s;
+    }
+    &:hover {
+      background-color: $blue;
+      color: #fff;
+      
+      svg path {
+        fill: #fff;
+      }
     }
   }
 }
@@ -86,7 +106,7 @@
     margin-right: 30px;
   }
   &__info-title {
-    font-family: Graphik;
+    font-family: 'Graphik', Inter;
     font-style: normal;
     font-weight: 600;
     font-size: 53px;
@@ -155,9 +175,57 @@
     padding-top: 50px;
     position: relative;
   }
+  .top-image__box {
+    position: relative;
+    z-index: 1;
+  }
+  .top-image-circles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+    overflow: hidden;
+  }
+  .top-image-circle {
+    position: absolute;
+    background-color: transparent;
+    width: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    
+    animation-name: topCircles;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+    &--1 {
+      // width: 60%;
+      animation-delay: 0s;
+    }
+    &--2 {
+      // width: 80%;
+      animation-delay: 2s;
+    }
+    &--3 {
+      animation-delay: 4s;
+      // width: 100%;
+    }
+    &--4 {
+      animation-delay: 6s;
+    }
+    &--5 {
+      animation-delay: 8s;
+    }
+  }
   &__image-coin {
     position: absolute;
-
+    z-index: 2;
     &--btc {
       top: 0px;
       left: -30px;
@@ -219,11 +287,7 @@
     width: 100%;
     border-radius: 20px;
     margin: 0 auto;
-    // box-shadow: 2px 2px 20px 3px rgba(22, 22, 33, 0.05);
-    border-right: 3px solid #a4c8db24;
-    // background-color: #fff;
-    // background-color: #000;
-    // background: rgb(250, 250, 250);
+    // border-right: 3px solid #a4c8db24;
     background: rgba($blue, 0.05);
     margin-bottom: 40px;
 
@@ -275,7 +339,7 @@
     font-size: 27px;
     line-height: 170%;
     font-weight: 600;
-    font-family: Graphik;
+    font-family: 'Graphik', Inter;
     padding: 10px 0;
     margin-bottom: 5px;
     color: #161621;
@@ -483,13 +547,27 @@
     min-width: 250px;
     width: 100%;
     transition: .3s;
-
-    &:hover {
-      transform: translateY(-7px);
-      box-shadow: 3px 3px 10px rgba($color: #000000, $alpha: 0.06);
+    position: relative;
+    
+  }
+  &__item-shadow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(179.79deg, rgba(36, 70, 101, 0.19) 0.18%, rgba(219, 230, 240, 0.0247) 139.68%);
+    border-radius: 10px;
+    opacity: 0;
+    transition: .3s;
+    &.hover {
+      opacity: 1;
     }
   }
-
+  &__item-box {
+    position: relative;
+    z-index: 5;
+  }
   &__box.line-1 {
     // column-gap: 30px;
     display: grid;
@@ -575,7 +653,7 @@
     }
   }
   &__item-date {
-    font-family: Graphik;
+    font-family: 'Graphik', Inter;
     font-weight: 500;
     font-size: 18px;
     line-height: 62px;
@@ -873,24 +951,6 @@
   .dashboard-bg--dark,
   .header__logo--dark {
     display: none;
-  }
-}
-
-@keyframes levitation {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(-10px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  75% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0);
   }
 }
 

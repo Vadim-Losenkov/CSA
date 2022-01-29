@@ -1,5 +1,4 @@
 $(function () {
-
   $('.header__menu--mobile').on('click', () => {
     $('.header__menu--mobile').toggleClass('open')
     $('.header-mobile').toggleClass('open')
@@ -16,7 +15,15 @@ $(function () {
   });
   const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-  $('[data-animate="button"]').hover(
+  /* $('[data-animate="button"]').hover(
+    function () {
+      
+    },
+    function () {
+      
+    }
+  ) */
+  /* .hover(
     function () {
       for (let i = 244, p = Promise.resolve(); i >= 65; i-= 4) {
         p = p.then(() => delay(1))
@@ -38,6 +45,14 @@ $(function () {
                })
              });
       }
+    }
+  ) */
+  $('.reviews__item').hover(
+    function (e) {
+      $(this).children('.reviews__item-shadow').addClass('hover')
+    },
+    function (e) {
+      $(this).children('.reviews__item-shadow').removeClass('hover')
     }
   )
   
@@ -67,67 +82,95 @@ $(function () {
       transition: '.3s'
     })
   })
-  $('[data-popup="form"]').validate({
-    errorClass: 'invalid-field',
-    rules: {
-      username: {
-        required: true,
-        minlength: 2
+  
+  if ($('[data-popup="form-up"]').length && $('[data-popup="form-in"]')) {
+    $('[data-popup="form-up"]').validate({
+      errorClass: 'invalid-field',
+      rules: {
+        email: {
+          required: true,
+          email: true
+        },
+        password: {
+          required: true,
+          minlength: 5,
+        },
+        rePassword: {
+          required: true,
+          minlength: 5,
+        },
       },
-      email: {
-        required: true,
-        email: true
+      messages: {
+        password: {
+          required: `<p class="input-error">Введите пароль</p>`,
+          minlength: jQuery.validator.format(`<p class="input-error">Минимум {0} символов</p>`)
+        },
+        rePassword: {
+          required: `<p class="input-error">Введите пароль</p>`,
+          minlength: jQuery.validator.format(`<p class="input-error">Минимум {0} символов</p>`)
+        },
+        email: {
+          required: `<p class="input-error">Введите E-mail</p>`,
+          email: `<p class="input-error">Введите корректный E-mail</p>`
+        },
       },
-      password: {
-        required: true,
-        minlength: 5,
-      },
-    },
-    messages: {
-      username: {
-        required: "Введите имя",
-        minlength: jQuery.validator.format("Имя должно состоять минимум из {0} символов")
-      },
-      password: {
-        required: "Введите пароль",
-        minlength: jQuery.validator.format("Пароль должен состоять минимум из {0} символов")
-      },
-      email: {
-        required: `
-        <p class="input-error">Введите E-mail</p>
-        <svg class="input-error-icon" width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15 1.15481L4.8 11L0 6.36697L1.19642 5.21216L4.8 8.6822L13.8036 0L15 1.15481Z" fill="#22BC5F"/>
-        </svg>
-        
-        `,
-        minlength: jQuery.validator.format(`
-        <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15 1.15481L4.8 11L0 6.36697L1.19642 5.21216L4.8 8.6822L13.8036 0L15 1.15481Z" fill="#22BC5F"/>
-        </svg>
-        
-        `)
-        // minlength: jQuery.validator.format("E-mail должен состоять минимум из {0} символов")
-      },
-    },
-    // the errorPlacement has to take the table layout into account
-    errorPlacement: function (error, element) {
-      if (element.is(":radio"))
-        error.appendTo(element.parent().next().next());
-      else if (element.is(":checkbox"))
-        error.appendTo(element.next());
-      else
+      // the errorPlacement has to take the table layout into account
+      errorPlacement: function (error, element) {
         error.appendTo(element.parent().next());
-    },
-    // specifying a submitHandler prevents the default submit, good for the demo
-    submitHandler: function (e) {
-      alert('success')
-    },
-    // set this class to error-labels to indicate valid fields
-    success: function (label) {
-      // set &nbsp; as text for IE
-      label.html("&nbsp;").addClass("checked")
-    }
-  });
+      },
+      // specifying a submitHandler prevents the default submit, good for the demo
+      submitHandler: function (e) {
+        $('.open-popup').magnificPopup('close')
+      },
+      // set this class to error-labels to indicate valid fields
+      success: function (element) {
+        element.html(`
+          <svg class="input-error-icon" width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 1.15481L4.8 11L0 6.36697L1.19642 5.21216L4.8 8.6822L13.8036 0L15 1.15481Z" fill="#22BC5F"/>
+          </svg>
+        `)
+      }
+    });
+    $('[data-popup="form-in"]').validate({
+      errorClass: 'invalid-field',
+      rules: {
+        email: {
+          required: true,
+          email: true
+        },
+        password: {
+          required: true,
+          minlength: 5,
+        },
+      },
+      messages: {
+        password: {
+          required: `<p class="input-error">Введите пароль</p>`,
+          minlength: jQuery.validator.format(`<p class="input-error">Минимум {0} символов</p>`)
+        },
+        email: {
+          required: `<p class="input-error">Введите E-mail</p>`,
+          email: `<p class="input-error">Введите корректный E-mail</p>`
+        },
+      },
+      // the errorPlacement has to take the table layout into account
+      errorPlacement: function (error, element) {
+        error.appendTo(element.parent().next());
+      },
+      // specifying a submitHandler prevents the default submit, good for the demo
+      submitHandler: function (e) {
+        $('.open-popup').magnificPopup('close')
+      },
+      // set this class to error-labels to indicate valid fields
+      success: function (element) {
+        element.html(`
+          <svg class="input-error-icon" width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 1.15481L4.8 11L0 6.36697L1.19642 5.21216L4.8 8.6822L13.8036 0L15 1.15481Z" fill="#22BC5F"/>
+          </svg>
+        `)
+      }
+    });
+  }
 
   $('.dashboard__theme').on('click', themeToggler)
   function themeToggler(event) {
