@@ -1,3 +1,9 @@
+.line-animation {
+  stroke-dasharray: 2600;
+  stroke-dashoffset: 2205;
+  animation: animdash 3s infinite;
+}
+
 
 @keyframes levitation {
   0% {
@@ -83,5 +89,11 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes animdash {
+  to {
+    stroke-dashoffset: 10;
   }
 }
