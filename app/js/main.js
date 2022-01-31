@@ -15,38 +15,6 @@ $(function () {
   });
   const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-  /* $('[data-animate="button"]').hover(
-    function () {
-      
-    },
-    function () {
-      
-    }
-  ) */
-  /* .hover(
-    function () {
-      for (let i = 244, p = Promise.resolve(); i >= 65; i-= 4) {
-        p = p.then(() => delay(1))
-             .then(() => {
-               $(this).css({
-                 background: `linear-gradient(${i}deg, #01B5E8 -7.92%, #0377FB 95.1%)`
-               })
-             });
-      }
-      // background: linear-gradient(244.26deg, #01B5E8 -7.92%, #0377FB 95.1%);
-      
-    },
-    function () {
-      for (let i = 65, p = Promise.resolve(); i <= 244; i+= 4) {
-        p = p.then(() => delay(1))
-             .then(() => {
-               $(this).css({
-                 background: `linear-gradient(${i}deg, #01B5E8 -7.92%, #0377FB 95.1%)`
-               })
-             });
-      }
-    }
-  ) */
   $('.reviews__item').hover(
     function (e) {
       $(this).children('.reviews__item-shadow').addClass('hover')
@@ -55,6 +23,27 @@ $(function () {
       $(this).children('.reviews__item-shadow').removeClass('hover')
     }
   )
+  setTimeout(() => {
+    $('.shark-wrapper').css({
+      opacity: 1,
+      transform: 'translateY(0px)',
+      transition: 'all .7s'
+    })
+  }, 3100);
+  setTimeout(() => {
+    $('.blue-circle').css({
+      opacity: 1,
+      transition: 'opacity 1s'
+    })
+    $('.blue-gradient-beforeAnimation').css({
+      opacity: 0,
+      transition: 'all .3s'
+    })
+    $('.blue-gradient-afterAnimation').css({
+      opacity: 1,
+      transition: 'all .3s'
+    })
+  }, 2900)
   
   $('[data-popup="close"]').on('click', (e) => {
     $('.open-popup').magnificPopup('close')

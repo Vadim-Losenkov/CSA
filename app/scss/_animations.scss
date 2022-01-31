@@ -1,7 +1,24 @@
-.line-animation {
-  stroke-dasharray: 2600;
-  stroke-dashoffset: 2205;
-  animation: animdash 3s infinite;
+.blue-line-animation {
+  // stroke-dasharray: 2600;
+  // stroke-dashoffset: 2205;
+  animation: animdash 3s 1 forwards;
+  
+  
+  // blue
+  stroke-dasharray: 1600;
+}
+.shark-wrapper {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.blue-circle {
+  opacity: 0;
+}
+.blue-gradient-afterAnimation {
+  opacity: 0;
+}
+.blue-gradient-beforeAnimation {
+  opacity: 1;
 }
 
 
@@ -94,6 +111,11 @@
 
 @keyframes animdash {
   to {
-    stroke-dashoffset: 10;
+    stroke-dashoffset: 1540;
   }
 }
+// @keyframes animdash {
+//   to {
+//     stroke-dashoffset: 1540;
+//   }
+// }
