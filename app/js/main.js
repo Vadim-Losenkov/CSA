@@ -1,5 +1,9 @@
 $(function () {
-  $('.header__menu--mobile').on('click', () => {
+  $('.header__menu--mobile, [data-button="toSecton"]').on('click', function(event) {
+    if (this.dataButton === 'toSection') {
+      $('[data-button="toSecton"]').removeClass('active')
+      $(this).addClass('active')
+    }
     $('.header__menu--mobile').toggleClass('open')
     $('.header-mobile').toggleClass('open')
   })
@@ -13,8 +17,58 @@ $(function () {
     },
     midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
   });
-  const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+  
+  function setHeaderPosition() {
+    let windowHeight = document.documentElement.clientHeight
+    
+    let homePosition = $('#home').offset().top
+    let reviewsPosition = $('#reviews').offset().top
+    let productPosition = $('#product').offset().top
+    let roadmapPosition = $('#roadmap').offset().top
+    
+    $(document).on('resize', (e) => {
+      setPositionValues()
+      checkPosition()
+    })
+    $(window).on( "orientationchange", function(event) {
+      windowHeight = document.documentElement.clientHeight
+      setPositionValues()
+      checkPosition()
+    });
 
+
+    $(document).on('scroll', (e) => {
+      checkPosition()
+    })
+    
+    function checkPosition() {
+      const position = Math.round(pageYOffset) + windowHeight
+      if (position - roadmapPosition > 400) {
+        linkPositionSetter('roadmap')
+      }
+      if (position - reviewsPosition > 400) {
+        linkPositionSetter('reviews')
+      } 
+      if (position - productPosition > 400) {
+        linkPositionSetter('product')
+      } 
+      console.log(position - roadmapPosition);
+    }
+    function linkPositionSetter(name) {
+      $('[data-button]').removeClass('active')
+      $(`[data-type="${name}"]`).addClass('active')
+    }
+    function setPositionValues() {
+      homePosition = $('#home').offset().top
+      reviewsPosition = $('#reviews').offset().top
+      productPosition = $('#product').offset().top
+      roadmapPosition = $('#roadmap').offset().top
+    }
+  }
+  
+  setHeaderPosition()
+  
+  const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
   $('.reviews__item').hover(
     function (e) {
       $(this).children('.reviews__item-shadow').addClass('hover')

@@ -66,16 +66,16 @@
         </div>
         <div class="header-mobile">
           <div class="header-mobile__menu">
-            <a href="#" data-button="toSecton" class="header-mobile__link active">
+            <a href="#" data-button="toSecton" data-type="home" class="header-mobile__link active">
               Главная
             </a>
-            <a href="#product" data-button="toSecton" class="header-mobile__link">
+            <a href="#product" data-type="product" data-button="toSecton" class="header-mobile__link">
               Услуги
             </a>
-            <a href="#reviews" data-button="toSecton" class="header-mobile__link">
+            <a href="#reviews" data-type="reviews" data-button="toSecton" class="header-mobile__link">
               Отзывы
             </a>
-            <a href="#roadmap" data-button="toSecton" class="header-mobile__link">
+            <a href="#roadmap" data-type="roadmap" data-button="toSecton" class="header-mobile__link">
               Roadmap
             </a>
           </div>
@@ -84,6 +84,10 @@
               Авторизация
             </a>
             <a href="#popup-signUp" data-effect="mfp-zoom-in" class="header__user-signUp open-popup">
+              <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.50172 10.9944C8.50172 11.6566 8.23805 12.2917 7.76876 12.76C7.29945 13.2283 6.66292 13.4914 5.99922 13.4914C5.33552 13.4914 4.699 13.2283 4.22969 12.76C3.76037 12.2917 3.49672 11.6566 3.49672 10.9944C3.49672 10.3322 3.76037 9.69705 4.22969 9.22877C4.699 8.7605 5.33552 8.49743 5.99922 8.49743C6.66292 8.49743 7.29945 8.7605 7.76876 9.22877C8.23805 9.69705 8.50172 10.3322 8.50172 10.9944ZM8.56278 14.0637C9.19471 13.538 9.64896 12.8308 9.86388 12.0383C10.0787 11.2458 10.0436 10.4065 9.76338 9.63463C9.4832 8.86275 8.97149 8.19573 8.29791 7.72431C7.62429 7.2529 6.82149 7 5.99872 7C5.17595 7 4.37314 7.2529 3.69954 7.72431C3.02594 8.19573 2.51423 8.86275 2.23405 9.63463C1.95386 10.4065 1.91878 11.2458 2.13361 12.0383C2.34843 12.8308 2.80272 13.538 3.43466 14.0637C2.44926 14.5285 1.6091 15.252 1.00413 16.1566C0.399156 17.0613 0.0521391 18.1131 0.000227228 19.1994C-0.00459759 19.3952 0.0675745 19.5851 0.201308 19.7283C0.335032 19.8716 0.519676 19.957 0.715712 19.9661C0.911738 19.9753 1.10356 19.9075 1.2501 19.7772C1.39663 19.647 1.48624 19.4647 1.49972 19.2694C1.5543 18.1153 2.05218 17.0265 2.89002 16.229C3.72786 15.4315 4.8413 14.9866 5.99922 14.9866C7.15713 14.9866 8.27059 15.4315 9.10842 16.229C9.94626 17.0265 10.4442 18.1153 10.4987 19.2694C10.5012 19.3691 10.5235 19.4673 10.5646 19.5583C10.6056 19.6493 10.6645 19.7312 10.7377 19.7991C10.8108 19.8671 10.8969 19.9199 10.9907 19.9542C11.0846 19.9886 11.1844 20.0039 11.2843 19.9992C11.3842 19.9946 11.4821 19.97 11.5724 19.9271C11.6626 19.8841 11.7434 19.8237 11.8098 19.7492C11.8764 19.6747 11.9272 19.5877 11.9596 19.4933C11.992 19.3989 12.0051 19.2989 11.9982 19.1994C11.9462 18.113 11.599 17.0611 10.9939 16.1564C10.3887 15.2518 9.54836 14.5284 8.56278 14.0637Z" fill="#0294F2"/>
+            <path d="M14.8516 9.53835V4.73722H15.8068V9.53835H14.8516ZM12.9304 7.61364V6.65838H17.7315V7.61364H12.9304Z" fill="#0294F2"/>
+            </svg>
               Регистрация
             </a>
           </div>
@@ -92,7 +96,7 @@
     </div>
   </header>
   <main class="main">
-    <section class="top">
+    <section id="home" class="top">
       <div class="container">
         <div class="top__inner">
           <div class="top__info wow slideInLeft" data-wow-duration="1s">
@@ -311,9 +315,9 @@
             <div class="reviews__head-info">
               <h2 class="reviews__title title">
                 Наши отзывы
-                <div class="title-text orange">
-                  Текстовое место
-                </div>
+                <!--<div class="title-text orange">-->
+                <!--  Текстовое место-->
+                <!--</div>-->
               </h2>
               <p class="reviews__text">
                 Созданное с целью помочь людям понять, освоить и разобраться в криптовалюте.

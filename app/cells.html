@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cells</title>
+  <style type="text/css" media="all">
+    .cells-con {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    .cells-inner {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      grid-gap: 10px;
+    }
+    .cells-item {
+      border-radius: 5px;
+      min-height: 10px;
+      min-width: 10px;
+      border: 2px solid red;
+      transition: background-color .7s;
+    }
+    .cells-item.active {
+      background-color: red;
+    }
+  </style>
+  <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+  <script>
+    eruda.init();
+  </script>
+</head>
+<body>
+  <div class="cells-con">
+    <div data-cells="wrapper" class="cells-inner">
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+      <div class="cells-item"></div>
+    </div>
+  </div>
+  
+  <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/cells.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
