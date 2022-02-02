@@ -43,16 +43,23 @@ $(function () {
     
     function checkPosition() {
       const position = Math.round(pageYOffset) + windowHeight
-      if (position - roadmapPosition > 400) {
-        linkPositionSetter('roadmap')
-      }
-      if (position - reviewsPosition > 400) {
-        linkPositionSetter('reviews')
-      } 
-      if (position - productPosition > 400) {
+      if (position - productPosition < 400){
+        linkPositionSetter('home')
+      } else if (
+        (position - productPosition > 400)
+        &&
+        (position - reviewsPosition < 400)
+      ) {
         linkPositionSetter('product')
+      } else if (
+        (position - reviewsPosition > 400)
+        &&
+        (position - roadmapPosition < 400)
+      ) {
+        linkPositionSetter('reviews')
+      } else if ((position - roadmapPosition > 400)) {
+        linkPositionSetter('roadmap')
       } 
-      console.log(position - roadmapPosition);
     }
     function linkPositionSetter(name) {
       $('[data-button]').removeClass('active')

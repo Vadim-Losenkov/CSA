@@ -45,10 +45,15 @@
   }
   &__menu-link {
     color: #161621;
-    transition: .5s;
+    transition: all .5s;
     &:hover {
-      transition: .5s;
+      transition: all .5s;
       color: $blue;
+    }
+    &.active {
+      transition: all .5s;
+      color: $blue;
+      font-weight: 700;
     }
   }
 
