@@ -13,19 +13,24 @@
     }
     .cells-inner {
       display: grid;
-      grid-template-columns: repeat(10, 1fr);
-      grid-template-rows: repeat(5, 1fr);
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(6, 1fr);
       grid-gap: 10px;
+      background: radial-gradient(28.98% 40.68% at 55.39% 47.55%, rgba(198, 217, 238, 0.49) 0%, rgba(255, 255, 255, 0) 100%);
+
     }
     .cells-item {
       border-radius: 5px;
-      min-height: 10px;
-      min-width: 10px;
-      border: 2px solid red;
+      min-height: 66px;
+      min-width: 177px;
+      border-radius: 15px;
+      /* border: 2px solid red; */
       transition: background-color .7s;
+      backdrop-filter: blur(20px);
+      
     }
     .cells-item.active {
-      background-color: red;
+      /* background-color: red; */
     }
   </style>
   <script src="//cdn.jsdelivr.net/npm/eruda"></script>
@@ -36,26 +41,7 @@
 <body>
   <div class="cells-con">
     <div data-cells="wrapper" class="cells-inner">
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
-      <div class="cells-item"></div>
+      
       <div class="cells-item"></div>
       <div class="cells-item"></div>
       <div class="cells-item"></div>

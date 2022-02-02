@@ -72,8 +72,9 @@ $(function () {
       roadmapPosition = $('#roadmap').offset().top
     }
   }
-  
-  setHeaderPosition()
+  if ($('#reviews').length) {
+    setHeaderPosition()
+  }
   
   const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
   $('.reviews__item').hover(

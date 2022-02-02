@@ -51,7 +51,10 @@ body {
 
 .main {
   overflow-x: hidden;
-  padding-top: 150px;
+  padding-top: 90px;
+  &.main-db {
+    padding-top: 0;
+  }
 }
 
 .title {

@@ -166,6 +166,14 @@
   .product__item {
     margin-bottom: 150px;
   }
+
+  .dashboard {
+    position: relative;
+    padding-bottom: 100px;
+  }
+  .dashboard-bg {
+    bottom: 0;
+  }
 }
 
 @media (max-width: 850px) {
