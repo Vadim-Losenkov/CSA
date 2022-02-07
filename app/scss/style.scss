@@ -713,10 +713,8 @@
 }
 
 .dashboard {
-  // margin-top: -60px;
   padding-top: 50px;
-  // padding-bottom: 100px;
-  padding-bottom: 10px;
+  padding-bottom: 250px;
   background-repeat: no-repeat;
   width: 100%;
   position: relative;
@@ -738,11 +736,13 @@
     width: auto;
   }
   &-bg {
-    position: relative;
     position: absolute;
     bottom: -200px;
     left: 0;
     right: 0;
+    
+    // overflow: hidden;
+    // max-height: 700px;
     img {
       width: 100%;
       object-fit: contain;
