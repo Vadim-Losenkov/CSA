@@ -11,7 +11,7 @@
   left: 0;
   right: 0;
   top: 0;
-  box-shadow: 2px 2px 10px rgba(#000, .03);
+  box-shadow: 2px 2px 10px rgba(#000, 0.03);
   background-color: #fff;
   z-index: 1000;
 
@@ -20,7 +20,7 @@
     box-shadow: none;
     background-color: transparent;
   }
-  
+
   &__inner {
     display: flex;
     align-items: center;
@@ -51,13 +51,13 @@
   }
   &__menu-link {
     color: #161621;
-    transition: all .5s;
+    transition: all 0.5s;
     &:hover {
-      transition: all .5s;
+      transition: all 0.5s;
       color: $blue;
     }
     &.active {
-      transition: all .5s;
+      transition: all 0.5s;
       color: $blue;
       font-weight: 700;
     }
@@ -71,13 +71,13 @@
   &__user-signIn {
     color: rgba(22, 22, 33, 0.24);
     margin-right: 30px;
-    transition: all .5s;
+    transition: all 0.5s;
     position: relative;
     padding-bottom: 2px;
     border-bottom: 1px solid rgba(22, 22, 33, 0);
-    
+
     &:hover {
-      transition: all .5s;
+      transition: all 0.5s;
       color: rgba(22, 22, 33, 0.4);
     }
   }
@@ -89,7 +89,7 @@
     padding-left: 53px;
     position: relative;
     color: #0294f2;
-    transition: all .3s;
+    transition: all 0.3s;
 
     svg {
       position: absolute;
@@ -98,12 +98,12 @@
       width: 20px;
       height: 20px;
       left: 23px;
-      transition: all .3s;
+      transition: all 0.3s;
     }
     &:hover {
       background-color: $blue;
       color: #fff;
-      
+
       svg path {
         fill: #fff;
       }
@@ -123,7 +123,7 @@
     margin-right: 30px;
   }
   &__info-title {
-    font-family: 'Graphik', Inter;
+    font-family: "Graphik", Inter;
     font-style: normal;
     font-weight: 600;
     font-size: 53px;
@@ -153,7 +153,7 @@
     border-radius: 8px;
     position: relative;
     &.blue {
-      background: linear-gradient(244deg, #01B5E8 -7.92%, #0377FB 95.1%);
+      background: linear-gradient(244deg, #01b5e8 -7.92%, #0377fb 95.1%);
       background-position: 0 0;
 
       &::before {
@@ -164,9 +164,9 @@
     }
     &.black {
       background: #000;
-      transition: .3s;
+      transition: 0.3s;
       &:hover {
-        transition: .3s;
+        transition: 0.3s;
         background: rgb(36, 36, 36);
       }
       &::before {
@@ -215,12 +215,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    
+
     animation-name: topCircles;
     animation-duration: 20s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    
+
     &--1 {
       // width: 60%;
       animation-delay: 0s;
@@ -356,7 +356,7 @@
     font-size: 27px;
     line-height: 170%;
     font-weight: 600;
-    font-family: 'Graphik', Inter;
+    font-family: "Graphik", Inter;
     padding: 10px 0;
     margin-bottom: 5px;
     color: #161621;
@@ -563,9 +563,8 @@
     background: #dbe6f030;
     min-width: 250px;
     width: 100%;
-    transition: .3s;
+    transition: 0.3s;
     position: relative;
-    
   }
   &__item-shadow {
     position: absolute;
@@ -576,7 +575,7 @@
     background: linear-gradient(179.79deg, rgba(36, 70, 101, 0.19) 0.18%, rgba(219, 230, 240, 0.0247) 139.68%);
     border-radius: 10px;
     opacity: 0;
-    transition: .3s;
+    transition: 0.3s;
     &.hover {
       opacity: 1;
     }
@@ -633,6 +632,7 @@
 
 .roadmap {
   margin-bottom: 140px;
+  width: 1920px;
   &__head {
     max-width: 370px;
     margin: 0 auto;
@@ -645,14 +645,65 @@
     text-align: center;
     color: #fff;
   }
+  &__slider {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    column-gap: 42px;
+
+    .item-1 {
+      transform: translate(-53px, 180px);
+      .roadmap__item-shadow {
+        box-shadow: inset 146px -1px 80px rgba(0, 0, 0, 0.8);
+        z-index: 10;
+        position: absolute;
+        opacity: 1;
+      }
+    }
+    .item-2 {
+      transform: translate(-30px, 70px);
+    }
+    .item-3 {
+      transform: translate(-5px, 108px);
+    }
+    .item-5 {
+      transform: translate(23px, 12px);
+    }
+    .item-6 {
+      transform: translate(40px, 80px);
+      .roadmap__item-shadow {
+        box-shadow: inset -165px -1px 80px rgba(0, 0, 0, 0.8);
+        z-index: 10;
+        position: absolute;
+        opacity: 1;
+      }
+    }
+  }
+  &__inner {
+    position: relative;
+    padding-bottom: 500px;
+  }
+  &-line {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -245px;
+    z-index: 0;
+  }
 
   &__item {
+    position: relative;
     background: linear-gradient(360deg, #0b0a22 -10.99%, rgba(11, 10, 34, 0) 139.84%);
     backdrop-filter: blur(22px);
     border-radius: 19px;
     padding: 31px;
     max-width: 385px;
     margin-bottom: 10px;
+
+    &::before {
+      opacity: 0;
+      transition: all 0.3s;
+    }
 
     &.short {
       max-width: 250px;
@@ -669,8 +720,18 @@
       }
     }
   }
+  &__item-shadow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 19px;
+    opacity: 0;
+    transition: 0.3s;
+  }
   &__item-date {
-    font-family: 'Graphik', Inter;
+    font-family: "Graphik", Inter;
     font-weight: 500;
     font-size: 18px;
     line-height: 62px;
@@ -682,6 +743,42 @@
     line-height: 177%;
     color: #fff;
     // color: #020113;
+  }
+
+  &__router {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -50px;
+    position: relative;
+    z-index: 10;
+  }
+  &__router-inner {
+    display: flex;
+    align-items: center;
+    column-gap: 28px;
+  }
+  &__router-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__router-season {
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 32px;
+    color: #ffffff;
+  }
+  &__router-year {
+    font-family: Graphik;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    color: #2b2e43;
+  }
+  &__router-left,
+  &__router-right {
+    cursor: pointer;
   }
 }
 
@@ -740,7 +837,7 @@
     bottom: -200px;
     left: 0;
     right: 0;
-    
+
     // overflow: hidden;
     // max-height: 700px;
     img {
@@ -750,9 +847,9 @@
       z-index: 0;
     }
   }
-  
+
   &__title {
-    // margin-top: 120px; 
+    // margin-top: 120px;
     margin-bottom: 40px;
     font-size: 41px;
     display: block !important;
@@ -825,7 +922,7 @@
   }
   &__user-pass {
     margin-top: 15px;
-    svg{
+    svg {
       width: 15px;
       height: 15px;
       // background-image: url("../images/icons/key.svg");
