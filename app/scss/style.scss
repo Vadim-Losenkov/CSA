@@ -679,6 +679,17 @@
     .item-3 {
       transform: translate(-5px, 108px);
     }
+    .item-4 {
+      backdrop-filter: blur(0px);
+      background-color: #fff;
+      transition: background-color .3s;
+      .roadmap__item-date {
+        color: #020113;
+      }
+      .roadmap__item-text {
+        color: #020113;
+      }
+    }
     .item-5 {
       transform: translate(23px, 12px);
     }
@@ -699,8 +710,10 @@
   }
 
   &__item {
+    transition: background-color .3s;
     position: relative;
-    background: linear-gradient(360deg, #0b0a22 -10.99%, rgba(11, 10, 34, 0) 139.84%);
+    // background: linear-gradient(360deg, #0b0a22 -10.99%, rgba(11, 10, 34, 0) 139.84%);
+    background-color: #0b0a22;
     backdrop-filter: blur(22px);
     border-radius: 19px;
     padding: 31px;
@@ -717,14 +730,14 @@
     }
 
     &.active {
-      backdrop-filter: blur(0px);
-      background: #fff;
-      .roadmap__item-date {
-        color: #020113;
-      }
-      .roadmap__item-text {
-        color: #020113;
-      }
+      // backdrop-filter: blur(0px);
+      // background: #fff;
+      // .roadmap__item-date {
+      //   color: #020113;
+      // }
+      // .roadmap__item-text {
+      //   color: #020113;
+      // }
     }
   }
   &__item-shadow {
