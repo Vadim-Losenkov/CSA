@@ -34,9 +34,9 @@ class Slider {
   }
   
   routerListener() {
-    const $routerWrapper = this.$wrapper.querySelector(this.settings.routerWrapper)
+    this.$routerWrapper = this.$wrapper.querySelector(this.settings.routerWrapper)
 
-    $routerWrapper.addEventListener('click', (event) => {
+    this.$routerWrapper.addEventListener('click', (event) => {
       const $target = event.target
       const buttonValue = $target.closest('[data-slider-button]').dataset.sliderButton
 
@@ -46,6 +46,8 @@ class Slider {
         this.changeSlidesRight
       }
     })
+    
+    this.renderSeason()
   }
 
   get changeSlidesRight() {
@@ -54,6 +56,7 @@ class Slider {
     this.getSlidesPosition
 
     this.setClasses(this.$slides)
+    this.setSeason()
   }
   
   get changeSlidesLeft() {
@@ -62,6 +65,7 @@ class Slider {
     this.getSlidesPosition
 
     this.setClasses(this.$slides)
+    this.setSeason()
   }
 
   setClasses($elArray) {
@@ -77,6 +81,37 @@ class Slider {
       $el.classList.add(`item-${idx + 1}`)
     })
   }
+  
+  renderSeason() {
+    this.$seasonWrapper = this.$routerWrapper.querySelector('[data-slider="season"]')
+    const seasonHTML = this.settings.seasons.objArray.map((obj, idx) => `
+      <div class="roadmap__router-info" data-slider-season="${idx}">
+        <div class="roadmap__router-season">
+          ${obj.name}
+        </div>
+        <div class="roadmap__router-year">
+          ${obj.year}
+        </div>
+      </div>
+    `).join('')
+    this.$seasonWrapper.insertAdjacentHTML('beforeend', seasonHTML)
+    this.setSeason()
+  }
+  
+  setSeason() {
+    const $el = this.$wrapper.querySelector('.item-4')
+    
+    if ($el) {
+      this.settings.seasons.objArray.forEach((obj, idx) => {
+        if (obj.elements.includes(+$el.dataset.sliderItem)) {
+          this.$seasonWrapper.querySelectorAll('.roadmap__router-info').forEach($el => {
+            $el.style.transform = `translateX(-${82 * idx}px)`
+            $el.style.transition = `all .3s`
+          })
+        }
+      })
+    }
+  }
 }
 
 new Slider({
@@ -90,22 +125,22 @@ new Slider({
       {
         name: 'Зима',
         year: 2021,
-        elements: [0, 1, 2]
+        elements: [0, 1]
       },
       {
         name: 'Весна',
         year: 2021,
-        elements: [0, 1, 2]
+        elements: [2, 3]
       },
       {
         name: 'Лето',
         year: 2021,
-        elements: [0, 1, 2]
+        elements: [4]
       },
       {
         name: 'Осень',
         year: 2021,
-        elements: [0, 1, 2]
+        elements: [5]
       },
     ]
   }

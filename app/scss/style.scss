@@ -778,10 +778,17 @@
     align-items: center;
     column-gap: 28px;
   }
+  &__router-box {
+    display: flex;
+    column-gap: 20px;
+    overflow-x: hidden;
+    width: 70px;
+  }
   &__router-info {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100px;
   }
   &__router-season {
     font-weight: 600;
