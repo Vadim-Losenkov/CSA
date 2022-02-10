@@ -779,10 +779,10 @@
     column-gap: 28px;
   }
   &__router-box {
-    display: flex;
-    column-gap: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     overflow-x: hidden;
-    width: 70px;
+    width: 100px;
   }
   &__router-info {
     display: flex;

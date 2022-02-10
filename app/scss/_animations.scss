@@ -1,11 +1,10 @@
 .blue-line-animation {
-  // stroke-dasharray: 2600;
-  // stroke-dashoffset: 2205;
   animation: animdash 3s 1 forwards;
-  
-  
-  // blue
   stroke-dasharray: 1600;
+}
+.blue-line-dashboard {
+  animation: animdashRoadmap 3s 1 forwards;
+  stroke-dasharray: 1318;
 }
 .shark-wrapper {
   opacity: 0;
@@ -22,6 +21,10 @@
 .blue-gradient-beforeAnimation {
   opacity: 1;
 }
+
+// .roadmap-animated-circle {
+//   opacity: 0 !important;
+// }
 
 
 @keyframes levitation {
@@ -116,8 +119,8 @@
     stroke-dashoffset: 1540;
   }
 }
-// @keyframes animdash {
-//   to {
-//     stroke-dashoffset: 1540;
-//   }
-// }
+@keyframes animdashRoadmap {
+  to {
+    stroke-dashoffset: 1295;
+  }
+}

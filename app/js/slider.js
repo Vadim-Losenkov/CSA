@@ -105,7 +105,7 @@ class Slider {
       this.settings.seasons.objArray.forEach((obj, idx) => {
         if (obj.elements.includes(+$el.dataset.sliderItem)) {
           this.$seasonWrapper.querySelectorAll('.roadmap__router-info').forEach($el => {
-            $el.style.transform = `translateX(-${82 * idx}px)`
+            $el.style.transform = `translateX(-${100 * idx}px)`
             $el.style.transition = `all .3s`
           })
         }
