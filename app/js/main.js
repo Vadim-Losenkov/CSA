@@ -252,4 +252,12 @@ $(function () {
   }
 })
 
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+const $roadmapCircles = document.querySelectorAll('.roadmap-animated-circle')
+
+for (let i = 0, p = Promise.resolve(); i < $roadmapCircles.length; i++) {
+    p = p.then(() => delay(400))
+         .then(() => $roadmapCircles[i].classList.add('show'));
+}
+
 new WOW().init();

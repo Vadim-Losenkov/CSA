@@ -22,6 +22,18 @@
   opacity: 1;
 }
 
+  .roadmap-animated-circle {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all .3s;
+    &.show {
+      opacity: 1;
+      transform: translateY(0px);
+      transition: all .3s;
+    }
+  }
+
+
 // .roadmap-animated-circle {
 //   opacity: 0 !important;
 // }
