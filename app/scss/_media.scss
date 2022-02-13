@@ -224,6 +224,21 @@
   .reviews__head-image {
     display: none;
   }
+  
+  .roadmap {
+    width: 100%;
+    &-line {
+      display: none;
+    }
+    &__item {
+      transform: translate(0) !important;
+      width: auto !important;
+      max-width: 70% !important;
+    }
+    &__slider {
+      display: block;
+    }
+  }
 }
 @media (max-width: 720px) {
   .reviews__box {
