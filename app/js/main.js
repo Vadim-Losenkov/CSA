@@ -252,21 +252,6 @@ $(function () {
   }
 })
 
-new Swiper('.roadmap__slider', {
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: "auto",
-  spaceBetween: 20,
-  coverflowEffect: {
-    rotate: 50,
-    stretch: 0,
-    depth: 100,
-    modifier: 5,
-    slideShadows: true,
-  },
-})
-
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const $roadmapCircles = document.querySelectorAll('.roadmap-animated-circle')
 

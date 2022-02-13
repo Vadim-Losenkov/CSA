@@ -6,7 +6,7 @@ class Slider {
 
     this.init()
   }
-  
+
   init() {
     this.getSlidesPosition
     this.routerListener()
@@ -17,7 +17,7 @@ class Slider {
   get getSlidesPosition() {
     this.$slides = this.$wrapper.querySelectorAll(this.settings.item)
     const windowWidth = window.innerWidth
-    
+
     this.$slides.forEach($item => {
       $item.classList.remove('left-shadow')
       $item.classList.remove('right-shadow')
@@ -32,7 +32,7 @@ class Slider {
       }
     })
   }
-  
+
   routerListener() {
     this.$routerWrapper = this.$wrapper.querySelector(this.settings.routerWrapper)
 
@@ -46,19 +46,19 @@ class Slider {
         this.changeSlidesRight
       }
     })
-    
+
     this.renderSeason()
   }
 
   get changeSlidesRight() {
-    const $lastSlide = this.$slides[this.$slides.length-1]
+    const $lastSlide = this.$slides[this.$slides.length - 1]
     this.$slider.insertAdjacentElement('afterbegin', $lastSlide)
     this.getSlidesPosition
 
     this.setClasses(this.$slides)
     this.setSeason()
   }
-  
+
   get changeSlidesLeft() {
     const $lastSlide = this.$slides[0]
     this.$slider.insertAdjacentElement('beforeend', $lastSlide)
@@ -73,7 +73,7 @@ class Slider {
       let className
       $el.classList.forEach(cl => {
         if (cl.startsWith('item-')) {
-          className =  cl
+          className = cl
         }
       })
 
@@ -81,7 +81,7 @@ class Slider {
       $el.classList.add(`item-${idx + 1}`)
     })
   }
-  
+
   renderSeason() {
     this.$seasonWrapper = this.$routerWrapper.querySelector('[data-slider="season"]')
     const seasonHTML = this.settings.seasons.objArray.map((obj, idx) => `
@@ -97,10 +97,10 @@ class Slider {
     this.$seasonWrapper.insertAdjacentHTML('beforeend', seasonHTML)
     this.setSeason()
   }
-  
+
   setSeason() {
     const $el = this.$wrapper.querySelector('.item-4')
-    
+
     if ($el) {
       this.settings.seasons.objArray.forEach((obj, idx) => {
         if (obj.elements.includes(+$el.dataset.sliderItem)) {
@@ -112,36 +112,127 @@ class Slider {
       })
     }
   }
+
+  desrtoy() {
+    // написать метод destroy
+  }
 }
 
-new Slider({
-  wrapper: '[data-slider="wrapper"]',
-  slider: '[data-slider="slider"]',
-  item: '.roadmap__item',
-  routerWrapper: '[data-slider="router"]',
-  seasons: {
-    elementSelector: '[data-slider-item]',
-    objArray: [
-      {
-        name: 'Зима',
-        year: 2021,
-        elements: [0, 1]
-      },
-      {
-        name: 'Весна',
-        year: 2021,
-        elements: [2, 3]
-      },
-      {
-        name: 'Лето',
-        year: 2021,
-        elements: [4]
-      },
-      {
-        name: 'Осень',
-        year: 2021,
-        elements: [5]
-      },
-    ]
-  }
+const routerIdx = [
+  {
+    name: 'Зима',
+    year: 2021,
+    elements: [0, 1]
+  },
+  {
+    name: 'Весна',
+    year: 2021,
+    elements: [2, 3]
+  },
+  {
+    name: 'Лето',
+    year: 2021,
+    elements: [4]
+  },
+  {
+    name: 'Осень',
+    year: 2021,
+    elements: [5]
+  },
+]
+
+const seasonItems = document.querySelectorAll('[data-slider-season]')
+seasonItems.forEach(($el, idx) => {
+  $el.setAttribute('data-router-id', idx)
 })
+
+function setRouter(index) {
+  seasonItems.forEach(($el, idx) => {
+    if (JSON.parse($el.dataset.sliderSeason).includes(index)) {
+      console.log($el);
+    }
+  })
+}
+
+const breakpoint = window.matchMedia('(max-width: 768px)')
+
+let customSlider 
+let mySwiper
+
+const breakpointChecker = function () {
+  if (!breakpoint.matches) {
+    if (mySwiper !== undefined) {
+      mySwiper.destroy(true, true)
+      enableCustomSlider()
+    }
+  } else if (breakpoint.matches) {
+    if (customSlider !== undefined) {
+      customSlider.desrtoy()
+    }
+    enableSwiper();
+  }
+}
+
+const enableSwiper = () => {
+  mySwiper = new Swiper('.roadmap__slider', {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.button-next',
+      prevEl: '.button-prev',
+    },
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 5,
+      slideShadows: true,
+    },
+  })
+
+  mySwiper.on('slideChangeTransitionStart', function (e) {
+    e.slides.forEach(($s, idx) => {
+      if($s.classList.contains('swiper-slide-active')) setRouter(idx)
+    })
+  })
+}
+
+const enableCustomSlider = () => {
+  customSlider = new Slider({
+    wrapper: '[data-slider="wrapper"]',
+    slider: '[data-slider="slider"]',
+    item: '.roadmap__item',
+    routerWrapper: '[data-slider="router"]',
+    seasons: {
+      elementSelector: '[data-slider-item]',
+      objArray: [
+        {
+          name: 'Зима',
+          year: 2021,
+          elements: [0, 1]
+        },
+        {
+          name: 'Весна',
+          year: 2021,
+          elements: [2, 3]
+        },
+        {
+          name: 'Лето',
+          year: 2021,
+          elements: [4]
+        },
+        {
+          name: 'Осень',
+          year: 2021,
+          elements: [5]
+        },
+      ]
+    }
+  })
+}
+
+breakpoint.addListener(breakpointChecker)
+breakpointChecker()

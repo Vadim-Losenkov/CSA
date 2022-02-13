@@ -230,6 +230,9 @@
     &-line {
       display: none;
     }
+    &__inner {
+      padding-bottom: 70px;
+    }
     &__item {
       transform: translate(0) !important;
       width: auto !important;
