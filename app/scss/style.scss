@@ -749,6 +749,7 @@
     border-radius: 19px;
     opacity: 0;
     transition: 0.3s;
+    z-index: 0;
   }
   &__item-date {
     font-family: "Graphik", Inter;
@@ -756,9 +757,13 @@
     font-size: 18px;
     line-height: 62px;
     color: #fff;
+    position: relative;
+    z-index: 3;
     // color: #020113;
   }
   &__item-text {
+    position: relative;
+    z-index: 3;
     font-size: 12px;
     line-height: 177%;
     color: #fff;

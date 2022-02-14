@@ -236,10 +236,12 @@
     &__item {
       transform: translate(0) !important;
       width: auto !important;
-      max-width: 70% !important;
+      max-width: 60% !important;
+      // background: #fff;
     }
     &__slider {
       display: block;
+      column-gap: 0;
     }
   }
 }
@@ -368,6 +370,35 @@
     padding-left: 48px;
     &::before {
       left: 19px;
+    }
+  }
+  .roadmap {
+    &__item {
+      padding: 18px;
+    }
+    &__item-date {
+      font-size: 14px;
+      line-height: 35px;
+    }
+    &__item-text {
+      font-size: 10px;
+    }
+    &__router-season {
+      font-size: 16px;
+    }
+    &__router-year {
+      font-size: 12px;
+    }
+    &__router-left,
+    &__router-right {
+      width: 35px;
+      height: 35px;
+    }
+    &__router-left {
+      margin-right: -30px;
+    }
+    &__router-right {
+      margin-left: -30px;
     }
   }
 }
