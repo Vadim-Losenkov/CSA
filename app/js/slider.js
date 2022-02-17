@@ -4,6 +4,8 @@ class Slider {
     this.$wrapper = document.querySelector(settings.wrapper)
     this.$slider = this.$wrapper.querySelector(this.settings.slider)
 
+    this.sliderPosition = 0
+
     this.init()
   }
 
@@ -26,15 +28,39 @@ class Slider {
       const rectX = Math.round($item.getBoundingClientRect().x)
 
       if (rectX < 40) {
-        $item.classList.add('left-shadow')
+        // $item.classList.add('left-shadow')
       } else if (windowWidth - (rectX + $item.getBoundingClientRect().width) < 0) {
-        $item.classList.add('right-shadow')
+        // $item.classList.add('right-shadow')
       }
     })
   }
 
   routerListener() {
+    document.querySelector('[data-slider-button="right"]').onclick = e => {
+      if (this.sliderPosition < this.settings.maxSlides) {
+        this.sliderPosition += 1
+        this.slide
+      } else {
+        this.sliderPosition = 0
+        this.slide
+      }
+    }
     
+    document.querySelector('[data-slider-button="left"]').onclick = e => {
+      if (this.sliderPosition > 0) {
+        this.sliderPosition -= 1
+        this.slide
+      } else {
+        this.sliderPosition = 0
+        this.slide
+      }
+    }
+  }
+
+  get slide () {
+    document.querySelectorAll('[data-slider-ridx]').forEach($s => {
+      $s.setAttribute('data-slider-ridx', this.sliderPosition)
+    })
   }
 
   setClasses($elArray) {
@@ -106,7 +132,7 @@ const enableSwiper = () => {
     spaceBetween: 20,
     breakpoints: {
       440: {
-        spaceBetween: -10,
+        spaceBetween: 10,
       }
     },
     navigation: {
@@ -135,6 +161,7 @@ const enableCustomSlider = () => {
     slider: '[data-slider="slider"]',
     item: '.roadmap__item',
     routerWrapper: '[data-slider="router"]',
+    maxSlides: 3, // максимальное кол-во проукрутов линии и самого слайдера
     seasons: {
       elementSelector: '[data-slider-item]',
     }

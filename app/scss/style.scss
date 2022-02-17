@@ -646,6 +646,22 @@
     text-align: center;
     color: #fff;
   }
+  [data-slider-ridx="0"] {
+    transition: all .3s;
+    transform: translate(0);
+  }
+  [data-slider-ridx="1"] {
+    transition: all .3s;
+    transform: translate(-1720px);
+  }
+  [data-slider-ridx="2"] {
+    transition: all .3s;
+    transform: translate(-3420px);
+  }
+  [data-slider-ridx="3"] {
+    transition: all .3s;
+    transform: translate(-4777px);
+  }
   &__slider {
     position: relative;
     z-index: 10;
@@ -671,30 +687,52 @@
     }
 
     .item-1 {
-      transform: translate(-53px, 180px);
+      transform: translate(21px, 95px);
     }
     .item-2 {
-      transform: translate(-30px, 70px);
+      transform: translate(57px, 70px);
     }
     .item-3 {
-      transform: translate(-5px, 108px);
+      transform: translate(102px, 84px);
     }
     .item-4 {
-      backdrop-filter: blur(0px);
-      background-color: #fff;
-      transition: background-color .3s;
-      .roadmap__item-date {
-        color: #020113;
-      }
-      .roadmap__item-text {
-        color: #020113;
-      }
+      transform: translate(165px, 17px);
     }
     .item-5 {
-      transform: translate(23px, 12px);
+      transform: translate(239px, 28px);
     }
     .item-6 {
-      transform: translate(40px, 80px);
+      transform: translate(339px, 10px);
+    }
+    .item-7 {
+      transform: translate(514px, -19px);
+    }
+    .item-8 {
+      transform: translate(608px, 13px);
+    }
+    .item-9 {
+      transform: translate(669px, 50px);
+    }
+    .item-10 {
+      transform: translate(803px, 20px);
+    }
+    .item-11 {
+      transform: translate(957px, 7px);
+    }
+    .item-12 {
+      transform: translate(1051px, -20px);
+    }
+    .item-13 {
+      transform: translate(1158px, -20px);
+    }
+    .item-14 {
+      transform: translate(1248px, -79px);
+    }
+    .item-15 {
+      transform: translate(1331px, -21px);
+    }
+    .item-16 {
+      transform: translate(1478px, -64px);
     }
   }
   &__inner {
@@ -705,7 +743,7 @@
     position: absolute;
     right: 0;
     left: 0;
-    bottom: -245px;
+    bottom: -1880px;
     z-index: 0;
   }
 
