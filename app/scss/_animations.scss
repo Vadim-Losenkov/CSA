@@ -22,16 +22,81 @@
   opacity: 1;
 }
 
-  .roadmap-animated-circle {
-    opacity: 0;
-    transform: translateY(-10px);
+.roadmap-animated-circle {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all .3s;
+  &.show {
+    opacity: 1;
+    transform: translateY(0px);
     transition: all .3s;
-    &.show {
-      opacity: 1;
-      transform: translateY(0px);
-      transition: all .3s;
-    }
   }
+}
+
+.checked-roadmap {
+  stroke-dasharray: 7825;
+  stroke-dashoffset: 7825;
+  
+  &.item-1 {
+    stroke-dashoffset: 7615;
+  }
+  &.item-2 {
+    stroke-dashoffset: 7250;
+    
+  }
+  &.item-3 {
+    stroke-dashoffset: 6830;
+    
+  }
+  &.item-4 {
+    stroke-dashoffset: 5965;
+    
+  }
+  &.item-5 {
+    stroke-dashoffset: 5470;
+    
+  }
+  &.item-6 {
+    stroke-dashoffset: 4900;
+    
+  }
+  &.item-7 {
+    stroke-dashoffset: 4380;
+    
+  }
+  &.item-8 {
+    stroke-dashoffset: 4000;
+    
+  }
+  &.item-9 {
+    stroke-dashoffset: 3460;
+    
+  }
+  &.item-10 {
+    stroke-dashoffset: 2910;
+  }
+  &.item-11 {
+    stroke-dashoffset: 2460;
+  }
+  &.item-12 {
+    
+    stroke-dashoffset: 1940;
+  }
+  &.item-13 {
+    
+    stroke-dashoffset: 1940;
+  }
+  &.item-14 {
+    
+    stroke-dashoffset: 1440;
+  }
+  &.item-15 {
+    stroke-dashoffset: 1000;
+  }
+  &.item-16 {
+    stroke-dashoffset: 465;
+  }
+}
 
 
 // .roadmap-animated-circle {

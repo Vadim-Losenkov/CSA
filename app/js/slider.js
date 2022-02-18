@@ -4,7 +4,7 @@ class Slider {
     this.$wrapper = document.querySelector(settings.wrapper)
     this.$slider = this.$wrapper.querySelector(this.settings.slider)
 
-    this.sliderPosition = 0
+    this.sliderPosition = settings.startSlide
 
     this.init()
   }
@@ -14,25 +14,21 @@ class Slider {
     this.routerListener()
 
     this.setClasses(this.$slides)
+
+    setRouter(0, this.sliderPosition)
   }
 
   get getSlidesPosition() {
     this.$slides = this.$wrapper.querySelectorAll(this.settings.item)
     const windowWidth = window.innerWidth
 
-    this.$slides.forEach($item => {
-      $item.classList.remove('left-shadow')
-      $item.classList.remove('right-shadow')
-    })
-    this.$slides.forEach($item => {
-      const rectX = Math.round($item.getBoundingClientRect().x)
-
-      if (rectX < 40) {
-        // $item.classList.add('left-shadow')
-      } else if (windowWidth - (rectX + $item.getBoundingClientRect().width) < 0) {
-        // $item.classList.add('right-shadow')
-      }
-    })
+    // this.$slides.forEach($item => {
+    //   $item.classList.remove('left-shadow')
+    //   $item.classList.remove('right-shadow')
+    // })
+    // this.$slides.forEach(($item, index) => {
+      
+    // })
   }
 
   routerListener() {
@@ -40,9 +36,11 @@ class Slider {
       if (this.sliderPosition < this.settings.maxSlides) {
         this.sliderPosition += 1
         this.slide
+        this.setSeason()
       } else {
         this.sliderPosition = 0
         this.slide
+        this.setSeason()
       }
     }
     
@@ -50,9 +48,11 @@ class Slider {
       if (this.sliderPosition > 0) {
         this.sliderPosition -= 1
         this.slide
+        this.setSeason()
       } else {
         this.sliderPosition = 0
         this.slide
+        this.setSeason()
       }
     }
   }
@@ -76,9 +76,13 @@ class Slider {
       $el.classList.add(`item-${idx + 1}`)
     })
   }
+  setSeason() {
+    const season = this.settings.seasons[this.sliderPosition]
+    setRouter(season)
+  }
 
   desrtoy() {
-    // написать метод destroy
+    
   }
 }
 
@@ -161,10 +165,9 @@ const enableCustomSlider = () => {
     slider: '[data-slider="slider"]',
     item: '.roadmap__item',
     routerWrapper: '[data-slider="router"]',
+    startSlide: 2,
     maxSlides: 3, // максимальное кол-во проукрутов линии и самого слайдера
-    seasons: {
-      elementSelector: '[data-slider-item]',
-    }
+    seasons: [1, 2, 5, 6] // здесь число из аттрибута data-slider-season="[6]" (т.е на 1м слайде будет сезон с атрибутом data-slider-season="[1]")
   })
 }
 
