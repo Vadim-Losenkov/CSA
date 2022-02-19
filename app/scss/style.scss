@@ -685,7 +685,7 @@
   }
   [data-slider-ridx="0"] {
     transition: all .3s;
-    transform: translate(200px) scale(0.9);
+    transform: translate(-170px) scale(0.9);
   }
   [data-slider-ridx="1"] {
     transition: all .3s;
@@ -697,7 +697,7 @@
   }
   [data-slider-ridx="3"] {
     transition: all .3s;
-    transform: translate(-4777px) scale(0.9);
+    transform: translate(-4000px) scale(0.9);
   }
   &__slider {
     position: relative;
@@ -725,6 +725,7 @@
 
     .item-1 {
       transform: translate(21px, 95px);
+      opacity: 0;
     }
     .item-2 {
       transform: translate(57px, 70px);
@@ -770,6 +771,7 @@
     }
     .item-16 {
       transform: translate(1478px, -64px);
+      opacity: 0;
     }
   }
   &__inner {
