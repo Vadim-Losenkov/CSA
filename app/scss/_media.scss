@@ -8,6 +8,12 @@
   }
 }
 
+@media (max-width: 800px), (max-height: 700px) {
+  .dashboard {
+    height: auto;
+  }
+}
+
 @media (max-width: 1080px) {
   .dark-side {
     margin: 0 -10px;

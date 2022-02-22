@@ -134,6 +134,7 @@ const enableSwiper = () => {
     centeredSlides: true,
     slidesPerView: "auto",
     spaceBetween: 20,
+    initialSlide: 10,
     breakpoints: {
       440: {
         spaceBetween: 10,
