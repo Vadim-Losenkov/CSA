@@ -14,7 +14,11 @@
   box-shadow: 2px 2px 10px rgba(#000, 0.03);
   background-color: #fff;
   z-index: 1000;
-
+  transition: transform .1s;
+  transform: translateY(0px);
+  &.hide {
+    transform: translateY(-100px);
+  }
   &.db-header {
     position: relative;
     box-shadow: none;
@@ -638,7 +642,7 @@
   &__head {
     max-width: 370px;
     margin: 0 auto;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
   }
   &__title {
     color: #fff;
@@ -685,19 +689,19 @@
   }
   [data-slider-ridx="0"] {
     transition: all .3s;
-    transform: translate(-170px) scale(0.9);
+    transform: translate(-170px) scale(0.85);
   }
   [data-slider-ridx="1"] {
     transition: all .3s;
-    transform: translate(-1720px) scale(0.9);
+    transform: translate(-1720px) scale(0.85);
   }
   [data-slider-ridx="2"] {
     transition: all .3s;
-    transform: translate(-3420px) scale(0.9);
+    transform: translate(-3420px) scale(0.85);
   }
   [data-slider-ridx="3"] {
     transition: all .3s;
-    transform: translate(-4000px) scale(0.9);
+    transform: translate(-4000px) scale(0.85);
   }
   &__slider {
     position: relative;
@@ -805,17 +809,6 @@
     &.short {
       max-width: 250px;
     }
-
-    &.active {
-      // backdrop-filter: blur(0px);
-      // background: #fff;
-      // .roadmap__item-date {
-      //   color: #020113;
-      // }
-      // .roadmap__item-text {
-      //   color: #020113;
-      // }
-    }
   }
   &__item-shadow {
     position: absolute;
@@ -853,8 +846,8 @@
     align-items: center;
     position: relative;
     z-index: 10;
-    margin-top: -260px;
-    margin-bottom: 120px;
+    margin-top: -310px;
+    margin-bottom: 50px;
   }
   &__router-inner {
     display: flex;
@@ -919,13 +912,21 @@
   }
 }
 
+.db-header {
+  min-height: 79px;
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 .dashboard {
-  padding-top: 50px;
+  padding-top: 129px;
   padding-bottom: 250px;
   background-repeat: no-repeat;
   width: 100%;
   position: relative;
   overflow: hidden;
+  height: calc((var(--vh, 1vh) * 100));
   &__inner {
     position: relative;
     z-index: 10;

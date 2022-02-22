@@ -1,3 +1,13 @@
+@media (max-height: 805px) {
+  .dashboard {
+    padding-top: 90px;
+
+    &__links {
+      margin-bottom: 30px;
+    }
+  }
+}
+
 @media (max-width: 1080px) {
   .dark-side {
     margin: 0 -10px;

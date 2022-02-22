@@ -1,5 +1,22 @@
 $(function () {
-  $('.header__menu--mobile, [data-button="toSecton"]').on('click', function(event) {
+  let lastScroll = 0
+  const defaultOffset = 200
+  const header = $('.header-main')
+  const scrollPosition = () => window.pageYOffset
+  const conatinsHide = header.hasClass('hide')
+
+  $(window).on('scroll', function() {
+    if (window.innerWidth > 1000) {
+      if (scrollPosition() > lastScroll) {
+        header.addClass('hide')
+      } else if (scrollPosition() < lastScroll) {
+        header.removeClass('hide')
+      }
+      lastScroll = scrollPosition()
+    }
+  })
+
+  $('.header__menu--mobile, [data-button="toSecton"]').on('click', function (event) {
     if (this.dataButton === 'toSection') {
       $('[data-button="toSecton"]').removeClass('active')
       $(this).addClass('active')
@@ -17,20 +34,20 @@ $(function () {
     },
     midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
   });
-  
+
   function setHeaderPosition() {
     let windowHeight = document.documentElement.clientHeight
-    
+
     let homePosition = $('#home').offset().top
     let reviewsPosition = $('#reviews').offset().top
     let productPosition = $('#product').offset().top
     let roadmapPosition = $('#roadmap').offset().top
-    
+
     $(document).on('resize', (e) => {
       setPositionValues()
       checkPosition()
     })
-    $(window).on( "orientationchange", function(event) {
+    $(window).on("orientationchange", function (event) {
       windowHeight = document.documentElement.clientHeight
       setPositionValues()
       checkPosition()
@@ -40,10 +57,10 @@ $(function () {
     $(document).on('scroll', (e) => {
       checkPosition()
     })
-    
+
     function checkPosition() {
       const position = Math.round(pageYOffset) + windowHeight
-      if (position - productPosition < 400){
+      if (position - productPosition < 400) {
         linkPositionSetter('home')
       } else if (
         (position - productPosition > 400)
@@ -59,7 +76,7 @@ $(function () {
         linkPositionSetter('reviews')
       } else if ((position - roadmapPosition > 400)) {
         linkPositionSetter('roadmap')
-      } 
+      }
     }
     function linkPositionSetter(name) {
       $('[data-button]').removeClass('active')
@@ -75,7 +92,7 @@ $(function () {
   if ($('#reviews').length) {
     setHeaderPosition()
   }
-  
+
   const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
   $('.reviews__item').hover(
     function (e) {
@@ -106,7 +123,7 @@ $(function () {
       transition: 'all .3s'
     })
   }, 2900)
-  
+
   $('[data-popup="close"]').on('click', (e) => {
     $('.open-popup').magnificPopup('close')
     e.preventDefault()
@@ -133,7 +150,7 @@ $(function () {
       transition: '.3s'
     })
   })
-  
+
   if ($('[data-popup="form-up"]').length && $('[data-popup="form-in"]')) {
     $('[data-popup="form-up"]').validate({
       errorClass: 'invalid-field',
@@ -223,6 +240,9 @@ $(function () {
     });
   }
 
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`)
+
   $('.dashboard__theme').on('click', themeToggler)
   function themeToggler(event) {
     // СДЕЛАТЬ ПЛАВНУЮ СМЕНУ ТЕМЫ ЧЕРЕЗ ПОЯВЛЕНИЕ ОВЕРЛЕЯ!!!!
@@ -256,8 +276,8 @@ const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const $roadmapCircles = document.querySelectorAll('.roadmap-animated-circle')
 
 for (let i = 0, p = Promise.resolve(); i < $roadmapCircles.length; i++) {
-    p = p.then(() => delay(400))
-         .then(() => $roadmapCircles[i].classList.add('show'));
+  p = p.then(() => delay(400))
+    .then(() => $roadmapCircles[i].classList.add('show'));
 }
 
 new WOW().init();
